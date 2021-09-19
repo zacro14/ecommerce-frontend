@@ -1,12 +1,20 @@
 import React from 'react'
-import Announcement from '../components/Announcement';
-import Navbar from '../components/Navbar';
+//import Announcement from '../components/Announcement';
+import Categories from '../components/Categories';
+import Navbar from '../components/navbar/Navbar';
+import Newsletter from '../components/newsletter/Newsletter';
+import Products from '../components/Products';
+import  Slider  from '../components/slides/Slider';
 
 export const Home = () => {
     return (
         <div>
-            <Announcement/>
+            {/* <Announcement/> */}
             <Navbar/>
+            <Slider/>
+            <Categories/>
+            <Products/>
+            <Newsletter/>
         </div>
     )
 }
