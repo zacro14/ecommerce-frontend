@@ -1,4 +1,4 @@
-import { SendOutlined } from '@mui/icons-material'
+
 import { Container, Title,Description,Input,InputContainer, Button} from './newsletter.styled'
 
 const Newsletter = () => {
@@ -7,9 +7,9 @@ const Newsletter = () => {
             <Title>Newsletter</Title>
             <Description>Get timely! updates for your favorate products.</Description>
             <InputContainer>
-                <Input placeholder="Your Email"/>
+                <Input placeholder="example@email.com"/>
                 <Button>
-                    <SendOutlined/>
+                   Subscribe
                 </Button>
             </InputContainer>
         </Container>
