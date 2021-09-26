@@ -21,7 +21,7 @@ const Navbar = () => {
                  </Left>
                  <Center>
                          <Logo>
-                                OL|Shop
+                                ZACRO
                          </Logo>
                 </Center>
                  <Right>
