@@ -60,7 +60,9 @@ export const List = styled.ul`
     list-style:none;
     color:white;
     display: flex;
-    flex-wrap:wrap;   
+    flex-wrap:wrap; 
+    
+  
 `;
 export const ListItem= styled.li`
     width:50%;
@@ -68,6 +70,10 @@ export const ListItem= styled.li`
     font-size:13px;
     cursor: pointer;
     margin-bottom:5px;
+
+    &:hover{
+        color:#EEC015;
+    }
 `;  
 
 export const Right= styled.div`
