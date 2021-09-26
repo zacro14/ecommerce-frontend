@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
-        height: 60px;
+export const Container = styled.nav`
         background-color: #000000;
         color: white;
+        position: sticky;
+        z-index: 999;
+        width:100%;
 `;
 export const Wrapper = styled.div`
         padding: 10px 20px;
@@ -42,7 +44,9 @@ export const Center =styled.div`
         text-align: center;
 `;
 export const Logo = styled.h1`
-        font-weight: bold;
+        font-weight: 200 ;
+        letter-spacing:5px;
+        cursor: pointer;
 `;
 export const Right =styled.div`
         flex: 1;
