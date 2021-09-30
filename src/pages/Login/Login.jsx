@@ -1,36 +1,89 @@
 
-import { Apple, Facebook, Google } from "@mui/icons-material"
+import { Apple, Facebook, Google, VisibilityOffOutlined, VisibilityOutlined } from "@mui/icons-material"
+import { useState } from "react"
 import Footer from "../../components/footer/Footer"
+import HeaderLogin from "../../components/headerlogin/HeaderLogin"
+import { DivLeft, TitleCreateAccount, Visibility, 
+    WelcomeContainer, WelcomeImg } 
+    from "../Register/styled.register"
 import { Container, Desc, ForgotPass, ForgotPasswordContainer, 
     FormContainer, Icon, IconLabel, Input, InputContainer, 
     LabelNew, LabelSignup, LeftContainer, LoginButton, 
     Or, RightContainer, Separator, SeparatorContainer, 
     SignupContainer, SocialButton, SocialContainer, Title, 
-    TitleLogin, Wrapper,} 
+    TitleLogin, WithInputIcon, Wrapper,} 
     from "./styled.login"
 
 
-const Login = () => {
+    
+
+    
+
+const Login = (title) => {
+
+     const [values, setValues] = useState({
+         password: "",
+         showPassword: false,
+     });
+
+     const handleClickShowPassword = () => {
+         setValues({ ...values, showPassword: !values.showPassword });
+       };
+
+     const handlePasswordChange = (prop) => (event) => {
+        setValues({ ...values, [prop]: event.target.value });
+      };
+
+     const handleSubmit = (event) => {
+         event.preventDefault()
+     }
+
     return (         
         <Container>
-           <Wrapper>
+            <HeaderLogin/>
+            <TitleCreateAccount>{title.title}</TitleCreateAccount>
+           <Wrapper>     
                <RightContainer>
-                   <Title>Zacro</Title>                  
+                   <DivLeft>
+                        <Title>Zacro</Title>     
+                   </DivLeft>                              
                         <Desc> #1 Shopping Platform in the Philippines</Desc>                  
                </RightContainer>
                <LeftContainer>
-               
-                   <form>
-                 
+                    <WelcomeContainer>                      
+                            <WelcomeImg   
+                            src="/images/login/welcome.svg" 
+                            alt="" 
+                            />
+                    </WelcomeContainer>             
+                   <form onSubmit ={handleSubmit}>                
                        <FormContainer>
                            <TitleLogin>Log in</TitleLogin>           
                            <InputContainer>                                
-                                <Input placeholder="Email Address" type="email" />
+                                <Input 
+                                placeholder="Email Address" 
+                                type="email"
+                                autoFocus
+                                name="logintoken"                                              
+                                />
                            </InputContainer> 
-                           <InputContainer>
-                                 <Input placeholder="Password" type="password" name="" />
-                           </InputContainer> 
-                                                  
+                           <WithInputIcon >
+                                <Input
+                                placeholder="Password" 
+                                type={values.showPassword ? "text" : "password"}
+                                onChange={handlePasswordChange}                      
+                                />
+                                <Visibility onClick={handleClickShowPassword}>             
+                                    {values.showPassword ? 
+                                    <VisibilityOutlined 
+                                    fontSize="small"
+                                    />
+                                     : 
+                                    <VisibilityOffOutlined
+                                    fontSize="small" 
+                                    /> }
+                                </Visibility>
+                           </WithInputIcon>                                                  
                            <LoginButton>log in</LoginButton>
                            <ForgotPasswordContainer>
                                <ForgotPass href="#">
@@ -60,12 +113,12 @@ const Login = () => {
                    </form>
 
                    <SignupContainer>
-                                <LabelNew>
-                                    New to Zacro?
-                                    <LabelSignup>
-                                        Sign up
-                                    </LabelSignup>
-                                </LabelNew>
+                        <LabelNew>
+                            New to Zacro?
+                                <LabelSignup>
+                                    Sign up
+                                </LabelSignup>
+                        </LabelNew>
                     </SignupContainer>  
                </LeftContainer>
            </Wrapper>
