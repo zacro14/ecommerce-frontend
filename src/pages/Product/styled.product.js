@@ -115,7 +115,7 @@ margin-top: 10px;
 `;
 export const Amount = styled.input`
 text-align:center;
-width:20px;
+width:40px;
 height:20px;
 border:1px solid black;
 border-radius:5px;

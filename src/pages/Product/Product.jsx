@@ -18,7 +18,9 @@ const Product = () => {
            <Announcement/>
            <Wrapper>
                <ImageContainer>
-                   <Image src="https://i.ibb.co/S6qMxwr/jean.jpg"/>                  
+                   <Image 
+                   src="https://i.ibb.co/S6qMxwr/jean.jpg"
+                   />                  
                </ImageContainer>
                <InfoContainer>
                    <Title>Wrangler Denim JumpSuit</Title>
@@ -55,7 +57,7 @@ const Product = () => {
                                 <FilterColorContainer>
                                 <FilterTitle>Color</FilterTitle>
                                 <SelectSize>
-                                        <FilterColor color="black"/>
+                                        <FilterColor color="#000"/>
                                         <FilterColor color="#EEC015"/>
                                         <FilterColor color="#adedfa"/>
                                 </SelectSize>                                 
