@@ -1,8 +1,12 @@
 import styled from 'styled-components'
+import { mobile } from "../../responsive"
 
 export const CartContainer = styled.div`
     background-color: #F5F5F5;
     color: black;
+    ${mobile({
+        height: "100vh",
+    })}
 `;
 
 export const  CartWrapper = styled.div`
@@ -10,6 +14,11 @@ export const  CartWrapper = styled.div`
     justify-content: flex-start;
     align-items:flex-start;
     margin: 0 1.875rem 0 1.875rem;
+    
+    ${mobile({
+        flexDirection: "column",
+        margin : 0,
+    })};
 `;
 
 export const CartTitle = styled.div`
@@ -27,7 +36,8 @@ export const LeftCartContainer = styled.div`
     background-color: #fff;
     border-radius: .1875rem;
     box-shadow: 0 .0625rem rgb(0 0 0 / 5%);
-    padding:.625rem;
+    padding: 0 .625rem;
+    margin: 0 .625rem;
 `;
 
 export const ItemSummaryTitle = styled.div`
@@ -37,6 +47,10 @@ export const ItemSummaryTitle = styled.div`
     align-items: center;
     height: 1.875rem;
     border-bottom: 1px solid #ccc;
+
+    ${mobile({
+        display: "none",  
+    })};
 `;
 
 export const ProductTitle = styled.div`
@@ -47,7 +61,11 @@ export const ProductTitle = styled.div`
 
 export const ProductDesc= styled(ProductTitle)`
     text-align:center;
-    width:15%;
+    width: 12.5%;
+
+    ${mobile({
+         width: "none",  
+    })};
 `;
 
 export const Info = styled(ItemSummaryTitle)`
@@ -55,17 +73,24 @@ export const Info = styled(ItemSummaryTitle)`
     justify-content: space-between;
     min-height: 12.5rem;
     border-bottom: 1px dashed #ccc;
+    ${mobile({
+       flexWrap: "wrap",
+       minHeight: "225px"
+    })};
 `;
+
 
 export const ProductContainer = styled.div`
     display: flex;
     justify-content:flex-start;
     width:50%;
+    ${mobile({
+       width: "100%",
+       justifyContent: "space-between",
+    })};
 `;
 
 export const ProductImage = styled.img`
-    height:150px;
-    width:150px;
 `;
 
 export const ProductDetails = styled.div`
@@ -78,6 +103,7 @@ export const Description = styled.span`
     justify-content: flex-start;
     font-size:.875rem;
     font-weight:${props=>props.fontweight};
+    padding: 10px 0;
 `;
 
 export const ColorText = styled.span`
@@ -92,13 +118,24 @@ export const SizeText = styled(ColorText)`
     align-items: center;
 `;
 
+export const PriceMobileText = styled(ColorText)`
+    display: none;
+
+    ${mobile({display: "block"})}
+`;
+
 export const UnitPrice = styled.div`
     text-align:center;
-    width:15%;
+    width: 12.5%;
+
+    ${mobile({width: "auto",})}
 `;
 
 export const Quantity = styled(UnitPrice)``;
-export const TotalPrice = styled(UnitPrice)``;
+export const TotalPrice = styled(UnitPrice)`
+      ${mobile({display: "none"})}
+`;
+
 export const Action = styled(UnitPrice)`
     display: flex;
     justify-content: space-evenly;
@@ -108,17 +145,27 @@ export const RemoveItem = styled.div`
     &:hover{
         color: #606770;
     }
+    ${mobile({padding: "10px",})}
 `;
-export const AddToWishlist = styled(RemoveItem)``;
+export const AddToWishlist = styled(RemoveItem)`
+`;
 
 export const RightCartContainer = styled.div`
     flex:1 ;
-    margin-left:.625rem;
+    position: sticky;
+
+    ${mobile({
+        paddingTop: "10px",  
+    })};
 `;
 
 export const SummaryContainer = styled(LeftCartContainer)`
      display: flex;
     flex-direction:column;
+    padding: .625rem;
+    min-height: 210px;
+    justify-content:space-between;
+   
 `;
 
 export const SummaryTitle = styled.span`
@@ -184,7 +231,7 @@ export const CheckoutButton = styled.button`
 `;
 
 export const AcceptPaymentContainer = styled.div`
-    margin-top: 1.25rem;
+    padding:.625rem;
 `;
 
 export const PaymentMethodTitle = styled.span`
