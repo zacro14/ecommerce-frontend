@@ -5,7 +5,7 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 import Tooltip from '@mui/material/Tooltip';
 import React from 'react';
 import { Container, Wrapper,Left,Language,SearchContainer, Input,Center
-,Logo,Right,MenuItem} from "./styled/styled.navbar";
+,Logo,Right,MenuItem, MenuitemText, MenuItemSearch} from "./styled/styled.navbar";
 
 
 const Navbar = () => {
@@ -26,8 +26,11 @@ const Navbar = () => {
                 </Center>
                  <Right>
                     
-                         <MenuItem>Sign up</MenuItem>
-                         <MenuItem>Log in</MenuItem>                     
+                         <MenuitemText>Sign up</MenuitemText>
+                         <MenuitemText>Log in</MenuitemText>
+                         <MenuItemSearch>
+                                 <SearchOutlinedIcon/>
+                         </MenuItemSearch>                    
                          <MenuItem>
                             <Tooltip title={"Wishlist"}>
                                     <Badge badgeContent= {2} color= "primary">
