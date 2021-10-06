@@ -4,8 +4,12 @@ import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import Tooltip from '@mui/material/Tooltip';
 import React from 'react';
-import { Container, Wrapper,Left,Language,SearchContainer, Input,Center
-,Logo,Right,MenuItem, MenuitemText, MenuItemSearch} from "./styled/styled.navbar";
+import { Container, Wrapper,Left,Language,
+        SearchContainer, Input,Center,Logo,
+        Right,MenuItem, MenuitemText,MenuItemSearch, 
+        MenuItemHamburger, MenuitemWishList} 
+from "./styled/styled_navbar";
+import { Menu } from '@mui/icons-material';
 
 
 const Navbar = () => {
@@ -24,27 +28,31 @@ const Navbar = () => {
                                 ZACRO
                          </Logo>
                 </Center>
-                 <Right>
-                    
+                 <Right>                  
                          <MenuitemText>Sign up</MenuitemText>
                          <MenuitemText>Log in</MenuitemText>
                          <MenuItemSearch>
                                  <SearchOutlinedIcon/>
                          </MenuItemSearch>                    
-                         <MenuItem>
+                         <MenuitemWishList id="wishlistMobile">
                             <Tooltip title={"Wishlist"}>
-                                    <Badge badgeContent= {2} color= "primary">
+                                    <Badge badgeContent= {0} color= "primary">
                                           <FavoriteBorderOutlinedIcon/>
                                     </Badge>
                             </Tooltip>      
-                         </MenuItem>
+                         </MenuitemWishList>
                          <MenuItem>
                             <Tooltip title={"My Bag"}>
-                                    <Badge badgeContent= {1} color= "primary">
+                                    <Badge badgeContent= {0} color= "primary">
                                             <ShoppingBagOutlinedIcon/>
                                     </Badge>
                             </Tooltip>      
-                         </MenuItem>                                                   
+                         </MenuItem>
+                         <MenuItemHamburger>
+                                <Tooltip title={"Menu"} >
+                                        <Menu/>
+                                </Tooltip>
+                         </MenuItemHamburger>                                       
                  </Right>
             </Wrapper>           
         </Container>

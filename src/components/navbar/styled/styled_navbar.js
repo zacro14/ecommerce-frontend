@@ -1,13 +1,13 @@
-import styled from 'styled-components'
- import { mobile } from "../../../responsive"
+import styled from 'styled-components/macro'
+import { mobile } from "../../../responsive"
 
-export const Container = styled.nav`
+export const Container = styled.header`
         background-color: #000000;
         color: white;
         z-index: 999;
         width:100%;
         position: sticky;
-      
+        height: 60px;
 `;
 
 export const Wrapper = styled.div`
@@ -80,19 +80,36 @@ export const Right =styled.div`
 `;
 
 export const MenuItem =styled.div`
+        display: flex;
         font-size: .9375rem;
         cursor: pointer;;
         margin-left: 1.5625rem;
+        align-items:center;
+
+
         &:hover{
                 color: #EEC015;
         }
+
+        ${mobile({
+                marginLeft: "20px",
+        })}
 `;
 
 export const MenuitemText = styled(MenuItem)`
         ${mobile({display: "none"})}
 `;
 
+export const MenuitemWishList = styled(MenuItem)`
+        ${mobile({display: "none"})}
+`;
+
 export const MenuItemSearch = styled(MenuItem)`
         display:none;
-        ${mobile({display: "block"})}
+        ${mobile({display: "inherit"})}
+`;
+
+export const MenuItemHamburger = styled(MenuItem)`
+        display:none;
+        ${mobile({display: "inherit"})}
 `;
