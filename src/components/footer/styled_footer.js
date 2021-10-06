@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components/macro"
 import { mobile } from "../../responsive"
 
 export const Container= styled.footer`   
@@ -39,7 +39,7 @@ export const SocialContainer = styled.div`
     display: flex;
     margin-top:1.875rem;
 
-    ${mobile({justifyContent: "center"})}
+    ${mobile({alignItems: "left"})}
 `;
 
 export const SocialIcon = styled.div`

@@ -1,5 +1,5 @@
 import { FacebookOutlined, Favorite, GitHub, MailOutline, PhoneAndroidOutlined, RoomOutlined, Twitter } from "@mui/icons-material"
-import {AssetAttrib, AttribContainer, Center, ContactItem, Container,Copyright,CopyrightContainer,Desc,DescContainer,Left, List, ListItem, Logo, Right, SocialContainer, SocialIcon, Title} from "./styled.footer"
+import {AssetAttrib, AttribContainer, Center, ContactItem, Container,Copyright,CopyrightContainer,Desc,DescContainer,Left, List, ListItem, Logo, Right, SocialContainer, SocialIcon, Title} from "./styled_footer"
 
 
 const Footer = () => {
@@ -78,10 +78,10 @@ const Footer = () => {
                 </Copyright>
                 <AttribContainer>
                     <AssetAttrib>
-                        all images are from unsplash.com
+                        image from unsplash.com and pexel.com
                     </AssetAttrib>
                     <AssetAttrib>
-                        all SVG are from  undraw.com
+                        SVG are from  undraw.com
                     </AssetAttrib>
                 </AttribContainer>            
            </CopyrightContainer>
