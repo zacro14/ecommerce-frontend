@@ -1,21 +1,21 @@
 export const sliderItems = [
     {
       id: 1,
-      img: "https://i.ibb.co/XsdmR2c/1.png",
+      img: "/images/slider/1.jpg",
       title: "SUMMER SALE",
       desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
       bg: "f5fafd",
     },
     {
       id: 2,
-      img: "https://i.ibb.co/DG69bQ4/2.png",
+      img: "/images/slider/2.jpg",
       title: "AUTUMN COLLECTION",
       desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
       bg: "fcf1ed",
     },
     {
       id: 3,
-      img: "https://i.ibb.co/cXFnLLV/3.png",
+      img: "/images/slider/3.jpg",
       title: "LOUNGEWEAR LOVE",
       desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
       bg: "fbf0f4",
@@ -26,7 +26,7 @@ export const sliderItems = [
     {
       id: 1,
       img: "/images/category/1.jpg",
-      title: "SHIRT STYLE!",
+      title: "SHIRT STYLE",
     },
     {
       id: 2,
@@ -64,10 +64,6 @@ export const sliderItems = [
     {
       id:6,
       img:"https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png",
-    },
-    {
-      id:7,
-      img:"https://www.vintageindustries.nl/download_front/qympzk1762/2217_Arrow_Jacket_Forest.png",
     },
     {
       id:8,
