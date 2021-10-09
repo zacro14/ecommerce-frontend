@@ -1,77 +1,27 @@
-import { Add, Close, FavoriteBorderOutlined, Remove} from "@mui/icons-material"
 import Footer from "../../components/footer/Footer"
 import Navbar from "../../components/navbar/Navbar"
-import { Amount, FilterColor, SelectSize } from "../Product/styled.product"
-import { AcceptPaymentContainer, Action, AddToWishlist, CartContainer, CartTitle, CartWrapper, 
-    CheckoutButton,  ColorText,  Description, Info, ItemSummaryTitle,
-    LeftCartContainer, PaymentImg, PaymentMethodTitle, PaymentsImgContainer, PriceMobileText, PriceText, ProductContainer,
-    ProductDesc, ProductDetails, ProductImage, ProductTitle,
-    Quantity, RemoveItem, RightCartContainer, ShippingfeeText,
-    SizeText,SubTotalText, SummaryContainer, SummaryInfo, SummaryInfoTotal, SummaryTitle, 
-    TotalPrice, TotalPriceText, TotalText, UnitPrice } 
+import CartItem from "../../components/cart/CartItem"
+import { 
+    AcceptPaymentContainer,
+    CartContainer, CartTitle, CartWrapper, 
+    CheckoutButton,LeftCartContainer,
+    PaymentImg, PaymentMethodTitle,PaymentsImgContainer,
+    PriceText,RightCartContainer, ShippingfeeText,
+    SubTotalText, SummaryContainer, SummaryInfo, 
+    SummaryInfoTotal, SummaryTitle, 
+    TotalPriceText, TotalText
+    } 
     from "./styled.cart"
 
 const Cart = () => {
     return (
  <CartContainer>
-     <Navbar/>
+     <Navbar active/>
      <CartTitle>shopping bag</CartTitle>
       <CartWrapper>       
         <LeftCartContainer>
-            <ItemSummaryTitle>
-                <ProductTitle>Product</ProductTitle>
-                <ProductDesc>unit price</ProductDesc>
-                <ProductDesc>quantity</ProductDesc>
-                <ProductDesc>total price</ProductDesc>
-                <ProductDesc>Action</ProductDesc>
-            </ItemSummaryTitle>
-            <Info>
-                <ProductContainer>
-                    <ProductImage 
-                    src="/images/products/Ramp Shoes.jpg"
-                    />
-                    <ProductDetails>
-                        <Description fontweight="600">
-                        nikeCourt legacy canvas                       
-                        </Description>
-                        <Description>
-                            <ColorText>Color: 
-                                <FilterColor 
-                                color="#000" 
-                                style={{margin:"0 5px "}}
-                                />
-                            </ColorText>                                            
-                        </Description>
-                        <Description>
-                            <SizeText>Size: 10 
-                            </SizeText>                                           
-                        </Description>
-                        <Description> 
-                            <PriceMobileText>Price: &#8369; 4,795</PriceMobileText>                                          
-                        </Description>
-                    </ProductDetails>
-                </ProductContainer>
-
-                <UnitPrice>&#8369; 4,795</UnitPrice>
-                <Quantity>
-                    <SelectSize defaultValue style={{justifyContent: "center"}}>
-                        <Remove style={{cursor:"pointer"}}/>
-                        <Amount  type="text" defaultValue="1"/>
-                        <Add style={{cursor:"pointer"}}/>
-                    </SelectSize>
-                </Quantity>
-                <TotalPrice>&#8369; 4,795</TotalPrice>
-                <Action>
-                    <AddToWishlist >
-                        <FavoriteBorderOutlined/>
-                    </AddToWishlist>
-                    <RemoveItem>
-                        <Close/>
-                    </RemoveItem>
-                </Action>
-            </Info>
+           <CartItem />
         </LeftCartContainer>
-        
         <RightCartContainer>
             <SummaryContainer>
                 <SummaryTitle>Order summary</SummaryTitle>
