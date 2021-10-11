@@ -1,21 +1,23 @@
-
-import { Apple, Facebook, Google, VisibilityOffOutlined, VisibilityOutlined } from "@mui/icons-material"
+import { 
+    Apple, Facebook, Google, 
+    VisibilityOffOutlined, VisibilityOutlined 
+    } from "@mui/icons-material"
 import { useState } from "react"
 import Footer from "../../components/footer/Footer"
 import HeaderLogin from "../../components/headerlogin/HeaderLogin"
-import { DivLeft, TitleCreateAccount, Visibility, 
-    WelcomeContainer, WelcomeImg } 
-    from "../Register/styled.register"
-import { Container, Desc, ForgotPass, ForgotPasswordContainer, 
+import {
+    DivLeft, LoginDescContainer, TitleCreateAccount, Visibility, 
+    WelcomeContainer, WelcomeImg 
+    } from "../Register/styled.register"
+import { 
+    Container, Desc, ForgotPass, ForgotPasswordContainer, 
     FormContainer, Icon, IconLabel, Input, InputContainer, 
-    LabelNew, LabelSignup, LeftContainer, LoginButton, 
+    LabelLogin, LabelNew, LeftContainer, LoginButton, 
     Or, RightContainer, Separator, SeparatorContainer, 
     SignupContainer, SocialButton, SocialContainer, Title, 
-    TitleLogin, WithInputIcon, Wrapper,} 
-    from "./styled.login"
+    TitleLogin, WithInputIcon, Wrapper
+    } from "./styled.login"
 
-
-    
 
     
 
@@ -46,8 +48,12 @@ const Login = (title) => {
                <RightContainer>
                    <DivLeft>
                         <Title>Zacro</Title>     
-                   </DivLeft>                              
-                        <Desc> #1 Shopping Platform in the Philippines</Desc>                  
+                   </DivLeft>
+                   <LoginDescContainer>                            
+                        <Desc> 
+                        #1 Shopping Platform in the Philippines
+                        </Desc>
+                    </LoginDescContainer>                 
                </RightContainer>
                <LeftContainer>
                     <WelcomeContainer>                      
@@ -56,7 +62,7 @@ const Login = (title) => {
                             alt="" 
                             />
                     </WelcomeContainer>             
-                   <form onSubmit ={handleSubmit}>                
+                   <form onSubmit ={handleSubmit} noValidate>                
                        <FormContainer>
                            <TitleLogin>Log in</TitleLogin>           
                            <InputContainer>                                
@@ -115,9 +121,9 @@ const Login = (title) => {
                    <SignupContainer>
                         <LabelNew>
                             New to Zacro?
-                                <LabelSignup>
+                                <LabelLogin to="/register">
                                     Sign up
-                                </LabelSignup>
+                                </LabelLogin>
                         </LabelNew>
                     </SignupContainer>  
                </LeftContainer>
