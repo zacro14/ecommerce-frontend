@@ -1,44 +1,51 @@
-import styled from "styled-components"
-
- export const Container = styled.div`
+import styled from "styled-components/macro"
+import { mobile } from "../../responsive";
+export const Container = styled.div`
 width: 100%;
 height: 100vh;
 display: flex;
 position:relative;
 overflow:hidden;
+
+${mobile({height: "100vh"})}
 `;
 export const Wrapper = styled.div`
 height:100%;
 display: flex;
 transition: all 1.5s ease;
-transform: translateX(${(props) => props.slideIndex * -100}vw);   
+transform: translateX(${(props) => props.slideIndex * -100}vw);
+
+${mobile({height: "50%"})}
 `;
 export const Slide = styled.div`
-width: 100vw;
-height: 100vh;
-display:flex;
-align-items: center;
-background-color: ${props => props.bg};
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #${props => props.bg};
 
 `;
 export const Img = styled.img`
-height: 90%;
+  height: 100%;
+
+  ${mobile({height: "100%"})}
+
 `;
 
 export const ImgContainer = styled.div`
-height:100%;
-flex:1;
+  height: 100%;
+  flex: 1;
 `;
 
 export const Title = styled.h1`
-font-size:50px;
+  font-size:50px;
 `;
 export const Desc = styled.p`
-margin: 50px 0px;
-font-size:20px;
-font-weight:500;
-letter-spacing: 3px;
-
+  margin: 50px 0px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 `;
 
 
@@ -50,8 +57,7 @@ export  const Button = styled.button`
   color: #000000;
   cursor: pointer;
   &:hover {
-    border: 1px solid  #FFFFFF;;
-      color: #FFFFFF;
+      color:#EEC015;
       background-color:  #000000;
   }
 `;
