@@ -1,6 +1,5 @@
 
-import { Container, Title,Description,Input,InputContainer, Button} from './newsletter.styled'
-
+import { Container, Title,Description,Input,InputContainer, Button} from './styled_newsletter'
 const Newsletter = () => {
     return (
         <Container>

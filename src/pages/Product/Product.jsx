@@ -1,30 +1,33 @@
 import Navbar from "../../components/navbar/Navbar"
-import { AddContainer, AddtoCart, Amount, AmountContainer, Br, BuyNow, Container, Desc, Divider, FilterColor, 
+import Announcement from "../../components/Announcement"
+import Footer from "../../components/footer/Footer"
+import { AddContainer, AddItem, AddtoCart, Amount, AmountContainer, Br, BuyNow, Container, Desc, Divider, FilterColor, 
     FilterColorContainer, 
     FilterContainer, FilterSize, FilterSizeOption,
     FilterTitle, Image, ImageContainer, 
-    InfoContainer, Price, SelectContainer, SelectSize, Title, Wrapper } from "./styled.product"
-import Announcement from "../../components/Announcement"
-import Footer from "../../components/footer/Footer"
-import { Rating } from "@mui/material"
-import { Add, Remove } from "@mui/icons-material"
+    // ImageGallery, 
+    InfoContainer, Price, RemoveItem, SelectContainer, SelectSize, Title, Wrapper } from "./styled.product"
 
 
 
 const Product = () => {
     return (
        <Container>
+        <Announcement/>
            <Navbar/>
-           <Announcement/>
            <Wrapper>
                <ImageContainer>
                    <Image 
-                   src="https://i.ibb.co/S6qMxwr/jean.jpg"
-                   />                  
+                   src="/images/products/air-force.png"
+                   alt="air-force"
+                   /> 
+                   {/* <ImageGallery 
+                   src="/images/products/Ramp Shoes.jpg" 
+                   alt="shoes" 
+                   />               */}
                </ImageContainer>
                <InfoContainer>
                    <Title>Wrangler Denim JumpSuit</Title>
-                   <Rating size="small" readOnly="true" value="5" style={{color: 'black', padding:"10px 0"}}/>
                    <Desc>
                     - Dark washed slim fit jeans
                     <Br/>
@@ -75,9 +78,9 @@ const Product = () => {
                             <AmountContainer>
                                 <FilterTitle>Quantity</FilterTitle>  
                                 <SelectSize>                                                                
-                                    <Remove style={{cursor:"pointer"}}/>
-                                    <Amount type="text" value="1"/>
-                                    <Add style={{cursor:"pointer"}}/>
+                                    <RemoveItem/>
+                                    <Amount type="text" defaultValue="1"/>
+                                    <AddItem/>
                                 </SelectSize>                                   
                             </AmountContainer>
                         </FilterContainer>

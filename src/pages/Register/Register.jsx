@@ -18,10 +18,15 @@ const Register = (title) => {
     const [values, setValues] = useState({
         password: "",
         showPassword: false,
+        showConfirmPassword: false,
     });
 
     const handleClickShowPassword = () => {
         setValues({ ...values, showPassword: !values.showPassword });
+      };
+
+      const handleClickShowConfirmPassword = () => {
+        setValues({ ...values, showConfirmPassword: !values.showConfirmPassword });
       };
 
     const handlePasswordChange = (prop) => (event) => {
@@ -51,13 +56,14 @@ const Register = (title) => {
                             alt="" 
                             />
                     </WelcomeContainer>
-                   <form onSubmit={handleSubmit}>                
+                   <form onSubmit={handleSubmit} noValidate>                
                        <FormContainer>
                            <TitleLogin>sign up</TitleLogin>           
                            <InputContainer>                                
                                 <Input 
                                 placeholder="Email Address" 
                                 type="email"
+                                name="email"
                                 autoFocus
                                 />
                            </InputContainer> 
@@ -66,6 +72,7 @@ const Register = (title) => {
                                 placeholder="Password" 
                                 type={values.showPassword ? "text" : "password"}
                                 onChange={handlePasswordChange}
+                                name="password"
                                 />
                                 <Visibility onClick={handleClickShowPassword}>             
                                     {values.showPassword ? 
@@ -78,13 +85,25 @@ const Register = (title) => {
                                     /> }
                                 </Visibility>
                            </WithInputIcon> 
-                           <InputContainer>
+                           <WithInputIcon>
                                  <Input 
                                  placeholder="Confirm Password" 
-                                 type="password"
+                                 type= {values.showConfirmPassword ? "text" : "password"}
+                                 onChange={handlePasswordChange}
+                                 name="confirmPassword"
                                  />
-                           </InputContainer>                                                       
-                           <LoginButton>sign up</LoginButton>                                                
+                                  <Visibility onClick={handleClickShowConfirmPassword}>             
+                                    {values.showConfirmPassword ? 
+                                    <VisibilityOutlined 
+                                    fontSize="small"
+                                    />
+                                     : 
+                                    <VisibilityOffOutlined 
+                                    fontSize="small" 
+                                    /> }
+                                </Visibility>
+                           </WithInputIcon>                                                       
+                           <LoginButton type ="submit">sign up</LoginButton>                                                
                                <SeparatorContainer>
                                    <Separator/>
                                    <Or>Or</Or>
@@ -106,6 +125,7 @@ const Register = (title) => {
                             </SocialContainer>
                             <TermsPrivacyContainer>
                                 By signing up, you agree to Zacro's
+                               
                                <TermsPrivacy href="#">
                                    Terms of Service
                                </TermsPrivacy>
@@ -120,7 +140,7 @@ const Register = (title) => {
                    <SignupContainer>
                         <LabelNew>
                             Have an account?
-                                <LabelSignup>
+                                <LabelSignup to="/login">
                                     log in 
                                 </LabelSignup>
                         </LabelNew>

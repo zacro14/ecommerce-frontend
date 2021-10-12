@@ -3,13 +3,18 @@ import {Badge , Tooltip}  from '@mui/material';
 import { Menu, ShoppingBagOutlined, FavoriteBorder
         } from '@mui/icons-material';
 import { Container, Wrapper,Left,
-        Center,Logo, Right,MenuItem, MenuitemText,MenuItemSearch, 
-        MenuItemHamburger, MenuitemWishList, Links, NavLinks, Span, MenuItemCenter, MobileContainer, MobileBLurWrapper,
+        Center,Logo, Right,MenuItem, 
+        MenuitemText, MenuItemHamburger, MenuitemWishList, 
+        Links, NavLinks, Span, MenuItemCenter, 
+        MobileContainer, MobileBLurWrapper, 
+        CloseIcon, MobileMenuLogo, MobilemenuItem, 
+        MenuLoginButton, ButtonContainer, MenuItemContainer, MenuItems,
         } from "./styled/styled_navbar";
 
 const Navbar = ({active}) => {
  const [isOpen, setMobileMenu ]=  useState(false);
     return (
+<>
         <Container>
             <Wrapper>
                  <Left>
@@ -18,7 +23,6 @@ const Navbar = ({active}) => {
                              <Input placeholder="Search Products"/>
                              <SearchOutlinedIcon style={{ fontSize:16, color: 'gray' }}/>
                      </SearchContainer> */}
-
                 <Links to="/">
                         <Logo>
                                 mens|<Span>Corner</Span>   
@@ -26,9 +30,21 @@ const Navbar = ({active}) => {
                 </Links>
                 </Left>
                 <Center>
-                     <MenuItemCenter>luxury</MenuItemCenter>
-                     <MenuItemCenter>sport</MenuItemCenter>
-                     <MenuItemCenter>office</MenuItemCenter>
+                     <MenuItemCenter>
+                        <NavLinks to="/productlist">
+                                luxury
+                        </NavLinks>
+                     </MenuItemCenter>
+                     <MenuItemCenter>
+                        <NavLinks to="productlist">
+                                sport
+                        </NavLinks>
+                     </MenuItemCenter>
+                     <MenuItemCenter>
+                        <NavLinks to = "/productlist">
+                                office
+                        </NavLinks>
+                     </MenuItemCenter>
                 </Center>
                 
                 <Right>  
@@ -41,14 +57,14 @@ const Navbar = ({active}) => {
                                 <NavLinks to="/login">
                                         Log in
                                 </NavLinks>
-                        </MenuitemText>
-                <MenuItemSearch>
-                        {/* <ShoppingBagOutlined/> */}
-                </MenuItemSearch>                    
+                        </MenuitemText>                  
                          <MenuitemWishList>
                             <Tooltip title={"Wishlist"}>
-                                    <Badge badgeContent= {0} color= "primary">
-                                          <FavoriteBorder/>
+                                    <Badge 
+                                    badgeContent= {0} 
+                                    color= "primary"
+                                    >
+                                        <FavoriteBorder/>
                                     </Badge>
                             </Tooltip>      
                          </MenuitemWishList>
@@ -61,21 +77,69 @@ const Navbar = ({active}) => {
                                         </Badge>
                                 </Tooltip>      
                                 </MenuItem>
-                         <MenuItemHamburger onClick={()=>setMobileMenu(true)}>
+                         <MenuItemHamburger 
+                         onClick={()=>setMobileMenu(true)}
+                         >
                                 <Tooltip title={"Menu"} >
                                         <Menu/>
                                 </Tooltip>
                          </MenuItemHamburger>                                        
                  </Right>
-                 
-                <MobileBLurWrapper isOpen ={isOpen} onClick={()=>setMobileMenu(false)}> 
-                        <MobileContainer isOpen ={isOpen}>
-                                                        ok
-                                                        ok
-                        </MobileContainer>       
-                </MobileBLurWrapper>   
             </Wrapper>           
         </Container>
+        <MobileContainer isOpen ={isOpen}>
+                <MobileMenuLogo>
+                        <Logo>
+                                mens|<Span>corner</Span>
+                        </Logo> 
+                        <CloseIcon 
+                        onClick ={()=> setMobileMenu(false)} 
+                        />
+                </MobileMenuLogo>
+                <MenuItemContainer>
+                     <MenuItems>
+                        <MobilemenuItem>
+                                <NavLinks to= "/">
+                                        Home
+                                </NavLinks>
+                        </MobilemenuItem>
+                        <MobilemenuItem>
+                                <NavLinks to= "/productlist">
+                                        luxury
+                                </NavLinks>
+                        </MobilemenuItem>
+                        <MobilemenuItem>
+                                <NavLinks to= "/productlist">
+                                         sport
+                                </NavLinks>
+                        </MobilemenuItem>
+                        <MobilemenuItem>
+                                <NavLinks to= "/productlist">
+                                        office
+                                </NavLinks>
+                        </MobilemenuItem>
+                     </MenuItems>   
+                <ButtonContainer>
+                        <MenuLoginButton color="true" >
+                                <Links to="/login">
+                                        Login
+                                </Links>
+                        </MenuLoginButton>
+                        <MenuLoginButton >
+                                <Links to="/register">
+                                        Register
+                                </Links>
+                        </MenuLoginButton>
+                </ButtonContainer>
+                </MenuItemContainer>
+               
+        </MobileContainer>  
+        <MobileBLurWrapper 
+        isOpen ={isOpen} 
+        onClick={()=> setMobileMenu(false)}
+        >        
+        </MobileBLurWrapper>   
+</>
     )
 }
 

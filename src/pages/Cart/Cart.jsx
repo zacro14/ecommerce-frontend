@@ -1,6 +1,7 @@
+import { Suspense } from "react";
+import { lazy } from "react";
 import Footer from "../../components/footer/Footer"
 import Navbar from "../../components/navbar/Navbar"
-import CartItem from "../../components/cart/CartItem"
 import { 
     AcceptPaymentContainer,
     CartContainer, CartTitle, CartWrapper, 
@@ -11,12 +12,14 @@ import {
     SummaryInfoTotal, SummaryTitle, 
     TotalPriceText, TotalText
     } 
-    from "./styled.cart"
+    from "./styled.cart";
+const CartItem = lazy(()=> import("../../components/cart/CartItem"));
 
 const Cart = () => {
     return (
  <CartContainer>
      <Navbar active/>
+     <Suspense fallback = { <div>Loading...</div>}>
      <CartTitle>shopping bag</CartTitle>
       <CartWrapper>       
         <LeftCartContainer>
@@ -54,6 +57,7 @@ const Cart = () => {
             </AcceptPaymentContainer>
         </RightCartContainer>       
       </CartWrapper>
+      </Suspense>
       <Footer/>
  </CartContainer>
     )

@@ -5,19 +5,17 @@ import Products from "../../components/Products";
 import Newsletter from "../../components/newsletter/Newsletter";
 import Footer from "../../components/footer/Footer";
 
- 
 
 const ProductList = () => {
     return (
         <Container>
-                <Navbar/>
-                <Announcement/>
+            <Announcement/>
+                <Navbar/>               
                 <Title>Dresses</Title>
                <FilterContainer>
                    <Filter>
                        <FilterText> Filter Products: </FilterText>
-                       <Select>
-                           <Option disabled selected>Color</Option>
+                       <Select defaultValue="">
                            <Option >White</Option>
                            <Option >Black</Option>
                            <Option >Red</Option>
@@ -25,8 +23,7 @@ const ProductList = () => {
                            <Option >Yellow</Option>
                            <Option >Green</Option>
                        </Select>
-                       <Select>
-                           <Option disabled selected>All</Option>
+                       <Select defaultValue="">
                            <Option >XS</Option>
                            <Option >S</Option>
                            <Option >M</Option>
@@ -34,9 +31,9 @@ const ProductList = () => {
                            <Option >XL</Option>                           
                        </Select>
                        </Filter>
-                   <Filter><FilterText>Sort By: </FilterText>
-                        <Select>
-                           <Option  disabled selected>Newest</Option>
+                   <Filter>
+                       <FilterText>Sort By: </FilterText>
+                        <Select defaultValue="">
                            <Option >Price Low to High</Option>
                            <Option >Price High to Low</Option>                        
                        </Select>

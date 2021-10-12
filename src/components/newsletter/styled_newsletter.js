@@ -1,4 +1,5 @@
-import styled from "styled-components"
+import styled from "styled-components/macro"
+import {  mobile } from "../../responsive"
 
 export const Container = styled.div`
     height:60vh;
@@ -8,6 +9,8 @@ export const Container = styled.div`
     flex-direction: column;
     background-color: #F0F2F5;
     color: #000000;
+
+    ${mobile({padding: "0 10px"})}
 `;
 export const Title = styled.h1`
     font-size:50px;
@@ -38,6 +41,8 @@ export const InputContainer = styled.div`
     display:flex;
     justify-content:space-between;
     border: 1px solid #000000;
+    
+    ${mobile({width: "100%"})}
    
 `;
 export const Input = styled.input`

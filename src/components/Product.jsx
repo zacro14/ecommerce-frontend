@@ -1,7 +1,6 @@
-import FavoriteBorderOutlined from "@mui/icons-material/FavoriteBorderOutlined";
-import SearchOutlined from "@mui/icons-material/SearchOutlined";
-import ShoppingBagOutlined from "@mui/icons-material/ShoppingBagOutlined";
-import styled from "styled-components";
+import { ShoppingBagOutlined, SearchOutlined, FavoriteBorderOutlined} from "@mui/icons-material";
+import { Link } from "react-router-dom";
+import styled from "styled-components/macro";
 
 
 const Info = styled.div`
@@ -27,12 +26,14 @@ const Container  = styled.div`
     align-items:center;
     background-color:#F0F2F5;
     position:relative;
+
     &:hover ${Info}{
-        opacity:1;      
+        opacity:1;
+        color: #EEC015;      
     }    
 `;
 const Image= styled.img`
-height:80%;
+    height:100%;
 `;
 
 const Icon = styled.div`
@@ -58,7 +59,8 @@ const Icon = styled.div`
 
 const Product = ({item}) => {
     return (
-       <Container>
+    <Link to ="/product"> 
+       <Container>  
             <Image src={item.img}/>
             <Info>
                 <Icon>
@@ -71,8 +73,8 @@ const Product = ({item}) => {
                     <FavoriteBorderOutlined/>
                 </Icon>
             </Info>
-
        </Container>
+    </Link> 
     )
 }
 
