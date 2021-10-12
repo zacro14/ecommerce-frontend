@@ -3,7 +3,7 @@ export const sliderItems = [
       id: 1,
       img: "/images/slider/1.jpg",
       title: "SUMMER SALE",
-      desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+      desc: "DON'T COMPROMISE your STYLE! GET at 30% OFF FOR NEW ARRIVALS.",
       bg: "f5fafd",
     },
     {
@@ -25,18 +25,18 @@ export const sliderItems = [
   export const categories = [
     {
       id: 1,
-      img: "/images/category/1.jpg",
-      title: "SHIRT STYLE",
+      img: "/images/category/men_luxury.jpg",
+      title: "luxury",
     },
     {
       id: 2,
-      img: "/images/category/2.jpg",
-      title: "LOUNGEWEAR LOVE",
+      img: "/images/category/men_sport.jpg",
+      title: "sport",
     },
     {
       id: 3,
-      img: "/images/category/3.jpg",
-      title: "KOREAN CLOTHING",
+      img: "/images/category/men_office.jpg",
+      title: "office",
     },
   ];
 
