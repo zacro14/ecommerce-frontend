@@ -52,35 +52,37 @@ ${mobile({
 `;
 
 export const ProductImage = styled.img`
+ width: 150px;
+ height: 150px;
 `;
 
 export const ProductDetails = styled.div`
-display: flex;
-flex-direction:column;
-padding-left:5px;
+  display: flex;
+  flex-direction:column;
+  padding-left:5px;
 `;
 
 export const Description = styled.span`
-justify-content: flex-start;
-font-size:.875rem;
-font-weight:${props=>props.fontweight};
-padding: 10px 0;
+  justify-content: flex-start;
+  font-size:.875rem;
+  font-weight:${props=>props.fontweight};
+  padding: 10px 0;
 `;
 
 export const ColorText = styled.span`
-display: flex;
-flex-direction:row;
-align-items: center;
+  display: flex;
+  flex-direction:row;
+  align-items: center;
 `;
 
 export const SizeText = styled(ColorText)`
-display: flex;
-flex-direction:row;
-align-items: center;
+  display: flex;
+  flex-direction:row;
+  align-items: center;
 `;
 
 export const PriceMobileText = styled(ColorText)`
-display: none;
+  display: none;
 
 ${mobile({display: "block"})}
 `;

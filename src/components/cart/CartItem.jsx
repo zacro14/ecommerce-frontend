@@ -1,5 +1,5 @@
 import { Add, Close, FavoriteBorderOutlined, Remove} from "@mui/icons-material"
-import { Amount, FilterColor, SelectSize } from "../../pages/Product/styled.product"
+import { Amount, FilterColor, SelectSize } from "../../pages/SingleProduct/styled.product"
 import { 
     Action, AddToWishlist,
     ColorText,  Description, 
@@ -24,7 +24,7 @@ const CartItem = () => {
             <Info>
                 <ProductContainer>
                     <ProductImage 
-                    src="/images/products/Ramp Shoes.jpg"
+                    src="/images/products/inhale_tshirt.jpg"
                     />
                     <ProductDetails>
                         <Description fontweight="600">
