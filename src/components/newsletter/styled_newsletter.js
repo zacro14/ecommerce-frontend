@@ -2,12 +2,12 @@ import styled from "styled-components/macro"
 import {  mobile } from "../../responsive"
 
 export const Container = styled.div`
-    height:60vh;
+    height:30vh;
     display:flex;
     align-items: center;
     justify-content:center;
     flex-direction: column;
-    background-color: #F0F2F5;
+    background-color: #EEC015;
     color: #000000;
 
     ${mobile({padding: "0 10px"})}
