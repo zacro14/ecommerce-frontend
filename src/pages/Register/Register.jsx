@@ -1,6 +1,7 @@
 
 import { Apple, Facebook, Google, VisibilityOffOutlined, VisibilityOutlined } from "@mui/icons-material"
 import { useState } from "react"
+import useDocumentTitle from "../../hooks/useDocumentTitle"
 import Footer from "../../components/footer/Footer"
 import HeaderLogin from "../../components/headerlogin/HeaderLogin"
 import { Container, Desc, DivLeft,
@@ -14,6 +15,7 @@ import { Container, Desc, DivLeft,
 
 
 const Register = (title) => {
+    useDocumentTitle('Register - MENS|Corner');
 
     const [values, setValues] = useState({
         password: "",
