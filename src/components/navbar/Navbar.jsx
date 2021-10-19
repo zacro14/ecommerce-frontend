@@ -114,17 +114,17 @@ const Navbar = ({active}) => {
                                 </NavLinks>
                         </MobilemenuItem>
                         <MobilemenuItem>
-                                <NavLinks activeClassName="active" to= "/products">
+                                <NavLinks activeClassName="active" to= {"/products/luxury"}>
                                         luxury
                                 </NavLinks>
                         </MobilemenuItem>
                         <MobilemenuItem>
-                                <NavLinks activeClassName="active" to= "/products">
+                                <NavLinks activeClassName="active" to={"/products/sport"}>
                                          sport
                                 </NavLinks>
                         </MobilemenuItem>
                         <MobilemenuItem>
-                                <NavLinks activeClassName="active" to= "/products">
+                                <NavLinks activeClassName="active" to= {"/products/office"}>
                                         office
                                 </NavLinks>
                         </MobilemenuItem>
