@@ -1,26 +1,17 @@
-import { useEffect } from "react";
 import Home from "./pages/Home";
 import Login from "./pages/Login/Login";
 import Cart from "./pages/Cart/Cart.jsx";
 import Register from "./pages/Register/Register";
-import Product from "./pages/Product/Product";
+import Product from "./pages/SingleProduct/ViewProduct";
 import ProductList from "./pages/ProductList/ProductList";
-import { 
-  useLocation,
-  BrowserRouter as Router,
-  Switch,
-  Route,
-   } from "react-router-dom"
+import NotFound  from "./pages/404notfound/NotFound";
+import { BrowserRouter as Router,Switch,Route,} from "react-router-dom"
+import { ScrollToTop } from "./hooks/useScrollTop";
 
- function ScrollToTop() {
-     const { pathname } = useLocation();
-   
-     useEffect(() => {
-       window.scrollTo(0, 0);
-     }, [pathname]);
-   
-     return null;
-   }
+
+const logintitle = "welcome to zacro! please log in";
+const registertitle = "create an account on zacro";
+
 const App = () =>{
   return(
     <>
@@ -32,16 +23,17 @@ const App = () =>{
           path="/register" 
         >
         <Register
-          title="create an account on zacro"/>
+          title={registertitle}/>
         </Route>
         <Route path="/login">
           <Login 
-            title="welcome to zacro! please log in"
+            title= {logintitle}
           />
         </Route>
        <Route path="/cart" component= {Cart} />
-       <Route path="/productlist" component= {ProductList}/>
-       <Route path="/product" component= {Product}/>
+       <Route path="/products/:category" component= {ProductList}/>
+       <Route exact path="/product/:category/:id" component= {Product}/>
+       <Route path= "*" component={NotFound} />
        
       </Switch>
     </Router>
