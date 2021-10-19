@@ -11,7 +11,6 @@ const TopProducts = lazy(() => import('../components/topProducts/TopProducts'));
 const renderLoader = () => <CircularProgress/>
 
 
-
 export const Home = () => {
     useDocumentTitle();
     return (
