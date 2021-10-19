@@ -44,7 +44,7 @@ export const sliderItems = [
   export const popularProducts = [
     {
       id:1,
-      img: "images/products/adicolorjacket.jpg",
+      img: "images/products/sport/adicolorjacket.jpg",
     },
     {
       id:2,
