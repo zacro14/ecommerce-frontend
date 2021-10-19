@@ -7,7 +7,7 @@ display: flex;
 position:relative;
 overflow:hidden;
 
-${mobile({height: "100vh"})}
+${mobile({display: "none"})}
 `;
 export const Wrapper = styled.div`
 height:100%;
