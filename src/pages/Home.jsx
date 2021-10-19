@@ -6,21 +6,22 @@ import Footer from '../components/footer/Footer';
 import Newsletter from '../components/newsletter/Newsletter';
 import  Slider  from '../components/slides/Slider';
 import { CircularProgress } from "@mui/material";
-
-const Products = lazy(() => import('../components/Products'));
+import useDocumentTitle from "../hooks/useDocumentTitle"
+const TopProducts = lazy(() => import('../components/topProducts/TopProducts'));
 const renderLoader = () => <CircularProgress/>
 
 
 
 export const Home = () => {
+    useDocumentTitle();
     return (
         <div>
             <Suspense fallback={renderLoader()}>
                 {/* <Announcement/>          */}
-                <Navbar/>
+                <Navbar />
                 <Slider/>
                 <Categories/> 
-                <Products/>
+                <TopProducts/>
                 <Newsletter/>
                 <Footer/>
             </Suspense>
