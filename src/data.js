@@ -1,3 +1,4 @@
+
 export const sliderItems = [
     {
       id: 1,
@@ -43,7 +44,7 @@ export const sliderItems = [
   export const popularProducts = [
     {
       id:1,
-      img:"https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png",
+      img: "images/products/adicolorjacket.jpg",
     },
     {
       id:2,
@@ -70,3 +71,71 @@ export const sliderItems = [
       img:"https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png",
     },
   ]
+
+export const ProductItem = [
+  {
+    id: '1',
+    name: "air force jordan",
+    price: "4,999",
+    desc: "",
+    img: "/images/products/luxury/airforce_addidas.jpg",
+    cat: "luxury", 
+  },
+  {
+    id: '2',
+    name: "ramp shoes",
+    price: "3,499",
+    desc: "",
+    img: "/images/products/luxury/air-force.png",
+    cat: "luxury",
+  },
+  {
+    id: '3',
+    name: "adidas air jordan",
+    price: "3,999",
+    desc: "This product is made with Primegreen, a series of high-performance recycled materials.",
+    img: "/images/products/sport/adidas_white.png",
+    cat: "sport",
+  },
+  {
+    id: '4',
+    name: "adidas Z.N.E. jacket X james bond",
+    price: "2,999",
+    desc: "From strength circuits at the gym to laps on the stadium stairs, these adidas all-purpose shorts are your go-to for training days. Moisture-absorbing AEROREADY keeps you dry. Lightweight ripstop fabric gives you freedom of movement. Stash your keys and ID in the front zip pockets and get to work",
+    img: "/images/products/sport/adidas-z.n.e.-jacket-x-james-bond.jpg",
+    cat: "sport",
+  },
+  {
+    id: '5',
+    name: "adidas jacket black",
+    price: "1,999",
+    desc: "From strength circuits at the gym to laps on the stadium stairs, these adidas all-purpose shorts are your go-to for training days. Moisture-absorbing AEROREADY keeps you dry. Lightweight ripstop fabric gives you freedom of movement. Stash your keys and ID in the front zip pockets and get to work",
+    img: "/images/products/sport/adicolorjacket.jpg",
+    cat: "sport",
+  },
+  {
+    id: '6',
+    name: "royal suite blue",
+    price: "1,499",
+    desc: "From strength circuits at the gym to laps on the stadium stairs, these adidas all-purpose shorts are your go-to for training days. Moisture-absorbing AEROREADY keeps you dry. Lightweight ripstop fabric gives you freedom of movement. Stash your keys and ID in the front zip pockets and get to work",
+    img: "/images/products/office/royalsuite_blue.png",
+    cat: "office",
+  },
+  {
+    id: '7',
+    name: "nike rubber shoes",
+    price: "5,499",
+    desc: "From strength circuits at the gym to laps on the stadium stairs, these adidas all-purpose shorts are your go-to for training days. Moisture-absorbing AEROREADY keeps you dry. Lightweight ripstop fabric gives you freedom of movement. Stash your keys and ID in the front zip pockets and get to work",
+    img: "/images/products/sport/nike rubbershoes.jpg",
+    cat: "sport",
+  },
+  {
+    id: '8',
+    name: "nike rubber shoes",
+    price: "5,499",
+    desc: "From strength circuits at the gym to laps on the stadium stairs, these adidas all-purpose shorts are your go-to for training days. Moisture-absorbing AEROREADY keeps you dry. Lightweight ripstop fabric gives you freedom of movement. Stash your keys and ID in the front zip pockets and get to work",
+    img: "/images/products/sport/nike rubbershoes.jpg",
+    cat: "sport",
+  }
+
+]
