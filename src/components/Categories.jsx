@@ -2,6 +2,7 @@ import styled from "styled-components/macro"
 import { categories } from "../data";
 import CategoriesItem from "./CategoryItem";
 import { mobile } from "../responsive"
+import { Link } from "react-router-dom"
 
 
 const Container = styled.div`
@@ -57,7 +58,12 @@ const Categories = () => {
                         <CategoriesItem  
                         item={item} 
                         key={item.id}
-                        />
+                        >
+                            <Link to={'/products'}>
+
+                            </Link>
+                        </CategoriesItem>
+                    
                 ))}
             </Wrapper>
         </Container>

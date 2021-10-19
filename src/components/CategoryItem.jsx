@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components/macro"
 import {mobile} from "../responsive"
 
@@ -52,15 +51,13 @@ const Title = styled.h1`
 
 const CategoriesItem = ({item}) => {
     return (
-        <Container>
-            <Link to="/productlist">
+        <Container>      
                 <Image src={item.img} alt={item.title}/>
                 <Info>
                         <Title>
                             {item.title}
                         </Title>
-                </Info>
-            </Link>
+                </Info>     
         </Container>
     )
 }
