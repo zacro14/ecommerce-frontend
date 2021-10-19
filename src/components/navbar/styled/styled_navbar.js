@@ -93,7 +93,7 @@ export const CloseIcon = styled(Close)`
 
 export const MobileBLurWrapper = styled.div` 
         z-index: 100;
-        /* background-color: hsla(0,0%,7%,.36); */
+        background-color: hsla(0,0%,7%,.36);
         backdrop-filter: blur(4px);
         display: block;
         position: fixed;
