@@ -2,6 +2,7 @@
 import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined';
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 import { sliderItems } from "../../data";
 import {Container, Arrow,Wrapper,Slide,ImgContainer,Img,InfoContainer,Button,Desc,Title} from "./styled.slides"
 
@@ -29,7 +30,9 @@ import {Container, Arrow,Wrapper,Slide,ImgContainer,Img,InfoContainer,Button,Des
                     <InfoContainer>
                         <Title>{item.title}</Title>
                         <Desc>{item.desc}</Desc>
-                        <Button>SHOP NOW</Button>
+                        <Link to="/products/luxury">
+                          <Button>SHOP NOW</Button>
+                        </Link>
                     </InfoContainer> 
                 </Slide>                
                 ))}
