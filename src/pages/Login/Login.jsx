@@ -1,16 +1,14 @@
-import { 
-    Apple, Facebook, Google, 
+import { Apple, Facebook, Google, 
     VisibilityOffOutlined, VisibilityOutlined 
     } from "@mui/icons-material"
 import { useState } from "react"
+import useDocumentTitle from "../../hooks/useDocumentTitle"
 import Footer from "../../components/footer/Footer"
 import HeaderLogin from "../../components/headerlogin/HeaderLogin"
-import {
-    DivLeft, LoginDescContainer, TitleCreateAccount, Visibility, 
+import { DivLeft, LoginDescContainer, TitleCreateAccount, Visibility, 
     WelcomeContainer, WelcomeImg 
     } from "../Register/styled.register"
-import { 
-    Container, Desc, ForgotPass, ForgotPasswordContainer, 
+import { Container, Desc, ForgotPass, ForgotPasswordContainer, 
     FormContainer, Icon, IconLabel, Input, InputContainer, 
     LabelLogin, LabelNew, LeftContainer, LoginButton, 
     Or, RightContainer, Separator, SeparatorContainer, 
@@ -22,6 +20,7 @@ import {
     
 
 const Login = (title) => {
+    useDocumentTitle('Login - MENS|Corner');
 
      const [values, setValues] = useState({
          password: "",
