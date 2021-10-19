@@ -107,7 +107,7 @@ const Navbar = ({active}) => {
                         />
                 </MobileMenuLogo>
                 <MenuItemContainer>
-                     <MenuItems>
+                     <MenuItems onClick={() => setMobileMenu(false)}>
                         <MobilemenuItem>
                                 <NavLinks activeClassName="active" to= "/">
                                         Home
