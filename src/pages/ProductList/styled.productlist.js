@@ -41,6 +41,6 @@ export const ProductContainer = styled.div`
     box-sizing: border-box;
 
     ${mobile({
-        gridTemplateColumns: ("50%","50%")
+        gridTemplateColumns: "repeat(2,50%)",
     })}
 `;
