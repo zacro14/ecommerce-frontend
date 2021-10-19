@@ -1,5 +1,4 @@
-import { Suspense } from "react";
-import { lazy } from "react";
+import { Suspense, lazy } from "react";
 import Footer from "../../components/footer/Footer"
 import Navbar from "../../components/navbar/Navbar"
 import { 

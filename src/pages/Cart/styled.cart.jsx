@@ -91,16 +91,16 @@ export const SummaryInfoTotal = styled(SummaryInfo)`
     border-top: .0625rem solid #ccc;
     margin-top: .625rem;
     padding-top: .3125rem;
-    font-size:1rem;
+    font-size: 1rem;
 `;
 
 export const TotalText = styled(SubTotalText)`
-    font-size:inherit;
+    font-size: inherit;
 `;
 
 export const TotalPriceText = styled(PriceText)`
-    font-weight:bold;
-    font-size:inherit;
+    font-weight: bold;
+    font-size: inherit;
 `;
 
 export const CheckoutButton = styled.button`
