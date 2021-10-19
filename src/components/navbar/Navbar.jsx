@@ -1,18 +1,21 @@
-import { useState } from 'react';
-import {Badge , Tooltip}  from '@mui/material';
-import { Menu, ShoppingBagOutlined, FavoriteBorder
-        } from '@mui/icons-material';
-import { Container, Wrapper,Left,
+import {  useState } from 'react';
+import { Badge , Tooltip }  from '@mui/material';
+import { Menu, ShoppingBagOutlined, FavoriteBorder } from '@mui/icons-material';
+import {
+        Container, Wrapper,Left,
         Center,Logo, Right,MenuItem, 
         MenuitemText, MenuItemHamburger, MenuitemWishList, 
         Links, NavLinks, Span, MenuItemCenter, 
         MobileContainer, MobileBLurWrapper, 
         CloseIcon, MobileMenuLogo, MobilemenuItem, 
-        MenuLoginButton, ButtonContainer, MenuItemContainer, MenuItems,
-        } from "./styled/styled_navbar";
+        MenuLoginButton, ButtonContainer, 
+        MenuItemContainer, MenuItems,
+} from "./styled/styled_navbar";
 
 const Navbar = ({active}) => {
+
  const [isOpen, setMobileMenu ]=  useState(false);
+
     return (
 <>
         <Container>
@@ -29,30 +32,37 @@ const Navbar = ({active}) => {
                         </Logo>         
                 </Links>
                 </Left>
-                <Center>
-                     <MenuItemCenter>
-                        <NavLinks to="/productlist">
-                                luxury
-                        </NavLinks>
-                     </MenuItemCenter>
-                     <MenuItemCenter>
-                        <NavLinks to="productlist">
-                                sport
-                        </NavLinks>
-                     </MenuItemCenter>
-                     <MenuItemCenter>
-                        <NavLinks to = "/productlist">
-                                office
-                        </NavLinks>
-                     </MenuItemCenter>
+                <Center>              
+                        <MenuItemCenter>
+                                <NavLinks to="/">                       
+                                        home    
+                                </NavLinks>                            
+                        </MenuItemCenter>                      
+                        <MenuItemCenter> 
+                                <NavLinks to={"/products/luxury"}>                      
+                                        luxury  
+                                </NavLinks>                  
+                        </MenuItemCenter> 
+                        <MenuItemCenter> 
+                                <NavLinks to={"/products/sport"}>                              
+                                        sport   
+                                </NavLinks>                   
+                        </MenuItemCenter>            
+                        <MenuItemCenter>
+                                <NavLinks to ={"/products/office"}>
+                                        office
+                                </NavLinks>
+                        </MenuItemCenter>    
                 </Center>
                 
                 <Right>  
-                        <MenuitemText>
-                                <NavLinks to="/register">        
-                                        Sign up
-                                </NavLinks>
+                       
+                        <MenuitemText> 
+                                <NavLinks to="/register">                   
+                                        Register  
+                                </NavLinks>            
                         </MenuitemText>
+                        
                         <MenuitemText>
                                 <NavLinks to="/login">
                                         Log in
@@ -99,22 +109,22 @@ const Navbar = ({active}) => {
                 <MenuItemContainer>
                      <MenuItems>
                         <MobilemenuItem>
-                                <NavLinks to= "/">
+                                <NavLinks activeClassName="active" to= "/">
                                         Home
                                 </NavLinks>
                         </MobilemenuItem>
                         <MobilemenuItem>
-                                <NavLinks to= "/productlist">
+                                <NavLinks activeClassName="active" to= "/products">
                                         luxury
                                 </NavLinks>
                         </MobilemenuItem>
                         <MobilemenuItem>
-                                <NavLinks to= "/productlist">
+                                <NavLinks activeClassName="active" to= "/products">
                                          sport
                                 </NavLinks>
                         </MobilemenuItem>
                         <MobilemenuItem>
-                                <NavLinks to= "/productlist">
+                                <NavLinks activeClassName="active" to= "/products">
                                         office
                                 </NavLinks>
                         </MobilemenuItem>

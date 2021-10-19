@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { Close } from '@mui/icons-material';
 
 export const Container = styled.header`
-        background-color: #000000;
+        background-color: ${props=> props.ref ? "transparent" : "#000000"};
         color: white;
         z-index: 999;
         width: 100%;
@@ -124,22 +124,24 @@ export const Span = styled.span`
         font-weight: 200; 
 `;
 
-export const Center = styled.div`
+export const Center = styled.ul`
         flex: 1;
         text-align: center;
         display: flex;
         justify-content: center;
         cursor: pointer;
           
+        
         ${mobile({
                 display: "none"
         })}
 `;
 
-export const MenuItemCenter = styled.div`
+export const MenuItemCenter = styled.li`
         padding: 10px;
         text-transform: uppercase;
-
+        display : inline-block;
+        
         &:hover{
                 border-bottom: 1px solid #fff;
         }
