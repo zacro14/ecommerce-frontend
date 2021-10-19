@@ -1,5 +1,5 @@
 import { Add, Close, FavoriteBorderOutlined, Remove} from "@mui/icons-material"
-import { Amount, FilterColor, SelectSize } from "../../pages/SingleProduct/styled.product"
+import { Amount, FilterColor, SelectSize } from "../../pages/SingleProduct/styled_viewproduct"
 import { 
     Action, AddToWishlist,
     ColorText,  Description, 
