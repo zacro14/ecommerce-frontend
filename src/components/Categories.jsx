@@ -54,16 +54,14 @@ const Categories = () => {
                 <Border/>
             </BorderContainer>
             <Wrapper> 
+               
                 {categories.map(item =>(
+                    <Link key = {item.id} to={`/products/${item.title}`}>
                         <CategoriesItem  
                         item={item} 
                         key={item.id}
-                        >
-                            <Link to={'/products'}>
-
-                            </Link>
-                        </CategoriesItem>
-                    
+                        />
+                    </Link>                       
                 ))}
             </Wrapper>
         </Container>
