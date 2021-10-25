@@ -1,8 +1,9 @@
 import Navbar from "../../components/navbar/Navbar"
 import { useParams } from "react-router"
 import { ProductItem } from "../../data"
-import { useEffect } from "react"
-//import Announcement from "../../components/Announcement"
+import { useEffect, useState } from "react"
+import { useDispatch } from "react-redux"
+import { Link } from "react-router-dom"
 import Footer from "../../components/footer/Footer"
 import useDocumentTitle from "../../hooks/useDocumentTitle"
 import { 
@@ -15,20 +16,41 @@ import {
     Price, RemoveItem, SelectContainer, 
     SelectSize, Title, Wrapper 
 } from "./styled_viewproduct"
+import { addProduct } from "../../redux/cartRedux"
+
 
 
 
 const Product = () => {
+const dispatch = useDispatch()
 const  { id } = useParams()
-const productitem = ProductItem.find((cat) =>  cat.id ===  id  )
+const [productitem, setProduct] = useState([]) 
 
 useEffect(()=>{
-    const productid = productitem.id !== id 
-    
-   console.log(productid)
-}, [productitem, id])
+    try {
+        const productdata = ProductItem.find((cat) =>  cat.id ===  id  )
+        setProduct(productdata)
+         console.log(productdata)
+    }catch (error){
+        console.log(error.message)
+    }
+   
+}, [id])
 
 useDocumentTitle(productitem?.name)
+const [quantity, setQuantity] = useState(1)
+const handleQuantity = (type) => {
+  if (type === "decItem") {
+     quantity > 1 && setQuantity(quantity - 1)
+}else{
+    setQuantity(quantity + 1)
+}
+  }
+
+  const handleAddtoCart =()=> {
+    dispatch(addProduct({ productitem, quantity}))
+  }
+
     return (
        <Container>
            <Navbar/>
@@ -38,10 +60,6 @@ useDocumentTitle(productitem?.name)
                    src={productitem?.img}
                    alt={productitem?.name}
                    /> 
-                   {/* <ImageGallery 
-                   src="/images/products/Ramp Shoes.jpg" 
-                   alt="shoes" 
-                   />               */}
                </ImageContainer>
                <InfoContainer>
                    <Title>{productitem?.name}</Title>
@@ -53,37 +71,49 @@ useDocumentTitle(productitem?.name)
                    <SelectContainer>
                         <FilterContainer>                                             
                                 <FilterColorContainer>
-                                <FilterTitle>Color</FilterTitle>
+                                <FilterTitle>Colors</FilterTitle>
                                 <SelectSize>
-                                        <FilterColor color="#000"/>
+                                        <FilterColor  
+                                        color="#bdb6b6"
+                                        />
                                         <FilterColor color="#EEC015"/>
                                         <FilterColor color="#adedfa"/>
                                 </SelectSize>                                 
                             </FilterColorContainer>
                             <FilterSize>
-                                <FilterTitle>Size</FilterTitle>
+                                <FilterTitle>Sizes</FilterTitle>
                                     <SelectSize>                   
-                                    <FilterSizeOption>XS</FilterSizeOption>
-                                    <FilterSizeOption>S</FilterSizeOption>
-                                    <FilterSizeOption>M</FilterSizeOption>
-                                    <FilterSizeOption>L</FilterSizeOption>
-                                    <FilterSizeOption>XL</FilterSizeOption>
+                                        <FilterSizeOption>XS</FilterSizeOption>
+                                        <FilterSizeOption>S</FilterSizeOption>
+                                        <FilterSizeOption>M</FilterSizeOption>
+                                        <FilterSizeOption>L</FilterSizeOption>
+                                        <FilterSizeOption>XL</FilterSizeOption>
                                     </SelectSize>                         
                             </FilterSize>
                             <AmountContainer>
                                 <FilterTitle>Quantity</FilterTitle>  
                                 <SelectSize>                                                                
-                                    <RemoveItem/>
-                                    <Amount type="text" defaultValue="1"/>
-                                    <AddItem/>
+                                    <RemoveItem onClick= {() => handleQuantity("decItem")} />
+                                    <Amount type="text"  maxLength= "1000" defaultValue = {quantity} value = {quantity} />
+                                    <AddItem onClick= {() => handleQuantity("addItem")}/>
                                 </SelectSize>                                   
                             </AmountContainer>
                         </FilterContainer>
                    </SelectContainer>
                    <Divider/>
-                   <AddContainer>                        
-                        <AddtoCart>Add To Cart</AddtoCart>
-                        <BuyNow>Buy Now</BuyNow>
+                   <AddContainer>
+                 
+                    <AddtoCart 
+                    onClick = {() => handleAddtoCart()}
+                    >
+                        Add To Cart
+                    </AddtoCart>
+                                        
+                   
+                    <Link to = {`/cart`} >
+                     <BuyNow>Buy Now</BuyNow>
+                    </Link>
+                
                    </AddContainer>
                </InfoContainer>
            </Wrapper>
