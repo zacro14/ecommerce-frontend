@@ -17,14 +17,15 @@ const ProductList = () => {
     const { category } = useParams();
     const cat = ProductItem.filter((cat) => cat.cat ===  category )
     useEffect(() => {
-        
+
+        console.log(cat)
     }, [category, cat]);
 
     useDocumentTitle(`${ category }- MENS|Corner`);
     return (
         <Container>
                 <Navbar/>               
-                <Title>{cat.cat}</Title>
+                <Title>{category}</Title>
                {/* <FilterContainer>
                    <Filter>
                        <FilterText> Filter Products: </FilterText>

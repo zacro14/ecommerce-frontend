@@ -1,6 +1,7 @@
 import styled from "styled-components/macro"
 import { mobile } from "../../responsive";
-export const Container = styled.div``;
+export const Container = styled.div`
+`;
 export const Title = styled.h1`
     margin:20px;
     text-transform: capitalize;
@@ -38,9 +39,12 @@ export const ProductContainer = styled.div`
     min-height: 50vh;
     display: grid;
     grid-template-columns: repeat(4, 25.00%);
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
     box-sizing: border-box;
 
     ${mobile({
         gridTemplateColumns: "repeat(2,50%)",
+        
     })}
 `;
