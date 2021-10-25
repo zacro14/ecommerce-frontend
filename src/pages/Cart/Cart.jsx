@@ -12,17 +12,19 @@ import {
     TotalPriceText, TotalText
     } 
     from "./styled.cart";
-const CartItem = lazy(()=> import("../../components/cart/CartItem"));
+
+const CartItem = lazy(()=> import("../../components/cart/cartitem/CartItem"));
 
 const Cart = () => {
+  
     return (
  <CartContainer>
-     <Navbar active/>
-     <Suspense fallback = { <div>Loading...</div>}>
+     <Navbar />
+     <Suspense fallback = { <div style= {{textAlign : "center"}}>Loading...</div>}>
      <CartTitle>shopping bag</CartTitle>
       <CartWrapper>       
         <LeftCartContainer>
-           <CartItem />
+                <CartItem /> 
         </LeftCartContainer>
         <RightCartContainer>
             <SummaryContainer>
@@ -50,7 +52,8 @@ const Cart = () => {
                 </PaymentMethodTitle>
                 <PaymentsImgContainer>
                     <PaymentImg 
-                    src="/images/payment/payment-method.png" 
+                    src="/images/cart/payment-method.png"
+                    alt="payment" 
                     />
                 </PaymentsImgContainer>
             </AcceptPaymentContainer>
