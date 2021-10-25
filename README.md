@@ -1,4 +1,6 @@
- it still in development  process, so expect for bugs thanks
+ It still in development  process, so expect for bugs thanks
+ 
+ 
 live site: https://menscorner.netlify.app/
 
 # Getting Started with Create React App
