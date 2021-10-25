@@ -5,6 +5,7 @@ export const Container= styled.footer`
     background-color: #fff;
     color:#000;
     margin-top: 1.25rem;
+    border-top: 1px solid #ccc;
 `;
 
 export const DescContainer = styled.div`
@@ -105,9 +106,9 @@ export const ContactItem = styled.div`
 export const CopyrightContainer = styled.div`
     display: flex;
     justify-content: space-between;
-    padding: 2.5rem 0;
-    background-color:#fff;
-    color: #000;
+    padding: 20px 0;
+    background-color: #363738;
+    color: #fff;
     font-size: .75rem;
     text-transform: capitalize;
     border-top: .0625rem solid #ccc;
