@@ -4,13 +4,17 @@ import { Link, NavLink } from 'react-router-dom';
 import { Close } from '@mui/icons-material';
 
 export const Container = styled.header`
-        background-color: ${props=> props.ref ? "transparent" : "#000000"};
-        color: white;
+        background-color: #fff;
+        color: #000;
         z-index: 999;
         width: 100%;
         height: 60px;
         transition: transform .15s ease;
         scroll-behavior: smooth;
+        border-bottom: 1px solid #e9ecef;
+        position: absolute;
+        top: 0;
+        
 `;
 
 export const Wrapper = styled.div`
@@ -143,7 +147,7 @@ export const MenuItemCenter = styled.li`
         display : inline-block;
         
         &:hover{
-                border-bottom: 1px solid #fff;
+                border-bottom: 1px solid #000;
         }
 
 `;

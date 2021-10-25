@@ -1,5 +1,6 @@
 import {  useState } from 'react';
 import { Badge , Tooltip }  from '@mui/material';
+import { useSelector } from "react-redux"
 import { Menu, ShoppingBagOutlined, FavoriteBorder } from '@mui/icons-material';
 import {
         Container, Wrapper,Left,
@@ -15,7 +16,7 @@ import {
 const Navbar = ({active}) => {
 
  const [isOpen, setMobileMenu ]=  useState(false);
-
+ const quantity = useSelector(state => state.cart.quantity)
     return (
 <>
         <Container>
@@ -80,7 +81,7 @@ const Navbar = ({active}) => {
                          </MenuitemWishList>
                                 <MenuItem active={active}>
                                 <Tooltip title={"My Bag"}>
-                                        <Badge badgeContent= {0} color= "primary">
+                                        <Badge badgeContent= {quantity} color= "error">
                                         <Links to="/cart">
                                                 <ShoppingBagOutlined/>
                                         </Links>
