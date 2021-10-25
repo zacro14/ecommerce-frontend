@@ -11,10 +11,7 @@ export const Container = styled.header`
         height: 60px;
         transition: transform .15s ease;
         scroll-behavior: smooth;
-        border-bottom: 1px solid #e9ecef;
-        position: absolute;
-        top: 0;
-        
+        border-bottom: 1px solid #e9ecef;     
 `;
 
 export const Wrapper = styled.div`
