@@ -10,4 +10,6 @@ const useDocumentTitle = (title) => {
   }, [title]);
 };
 
+
+
 export default useDocumentTitle;
