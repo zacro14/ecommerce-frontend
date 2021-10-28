@@ -1,4 +1,5 @@
 import React from 'react'
+import { formatNumber } from "../../helpers/utils"
 import { 
     Container, 
     DetailsContainer, 
@@ -29,7 +30,7 @@ const Products = ({item}) => {
                         {cat}
                     </ProductDetailsCategory>
                     <ProductDetailsPrice>
-                        &#8369;{price}
+                        {formatNumber(price)}
                     </ProductDetailsPrice>
                 </DetailsContainer>
             </ProductDetailsContainer>
