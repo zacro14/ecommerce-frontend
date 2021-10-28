@@ -17,8 +17,6 @@ const ProductList = () => {
     const { category } = useParams();
     const cat = ProductItem.filter((cat) => cat.cat ===  category )
     useEffect(() => {
-
-        console.log(cat)
     }, [category, cat]);
 
     useDocumentTitle(`${ category }- MENS|Corner`);

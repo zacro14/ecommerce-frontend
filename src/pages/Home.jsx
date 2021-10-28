@@ -7,14 +7,18 @@ import Newsletter from '../components/newsletter/Newsletter';
 import  Slider  from '../components/slides/Slider';
 import { CircularProgress } from "@mui/material";
 import useDocumentTitle from "../hooks/useDocumentTitle"
+import styled from "styled-components/macro"
 const TopProducts = lazy(() => import('../components/topProducts/TopProducts'));
 const renderLoader = () => <CircularProgress/>
 
+const Main = styled.main`
+    scroll-behavior: smooth;
+`;
 
 export const Home = () => {
     useDocumentTitle();
     return (
-        <div>
+        <Main>
             <Suspense fallback={renderLoader()}>
                 {/* <Announcement/>          */}
                 <Navbar />
@@ -24,7 +28,7 @@ export const Home = () => {
                 <Newsletter/>
                 <Footer/>
             </Suspense>
-        </div>
+        </Main>
     )
 }
 

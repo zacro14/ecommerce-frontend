@@ -1,8 +1,8 @@
 import styled from "styled-components/macro"
 import { Remove , Add } from "@mui/icons-material";
 import {  mobile } from "../../responsive"
-export const Container = styled.div`
-`;
+
+export const Container = styled.div``;
 
 export const Wrapper = styled.div`
     display: flex;
@@ -93,6 +93,7 @@ export const FilterTitle = styled.label`
     font-weight: 600;
     margin-right: 15px;
     width: 110px;
+    color: #818181;
     
     ${mobile({
         width: "30px",
@@ -105,26 +106,27 @@ export const FilterColor = styled.span`
     display: flex;
     background-color: ${props => props.color};
     border-radius:50%;
-    width:30px;
-    height:30px;
-    margin:0 10px;
-    z-index: 1;
+    margin: 5px;
+    width: 36px;
+    height: 36px;
     position: relative;
     justify-content: space-between;
 
     &:hover{
         cursor: pointer;
-        border: 2px solid #f1f1f1;
+        border: 1px solid #222;
     }
-
-    &:after {
-    content: "✓";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: auto;
-    color: #fff;
+    &.active{
+        border: 2px solid #222;
+        ::after{
+            content: "✓";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            margin: auto;
+            color: #fff;
+        }
     }
 `;
 
@@ -152,15 +154,17 @@ export const FilterSizeOption = styled.button`
     color: #000000;
     cursor: pointer;
     width: 50px;
-    margin: 0 5px 5px 0 ;
+    margin: 5px;
     align-items: center;
-    display: flex;
     justify-content: center;
+    text-transform: uppercase;
 
     &:hover { 
-        border: 1px solid black;
+        border: 1px solid #222;
     }
-   
+    &.active{
+        border: 2px solid #222;
+    }
 `;
 
 export const AddContainer = styled.div`
@@ -242,4 +246,6 @@ export const BuyNow = styled.button`
         opacity:80%;
     }
 `;
+
+
 
