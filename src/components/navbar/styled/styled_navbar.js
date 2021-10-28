@@ -1,7 +1,16 @@
-import styled from 'styled-components/macro'
+import  styled, {keyframes} from 'styled-components/macro'
 import { mobile } from "../../../responsive"
 import { Link, NavLink } from 'react-router-dom';
 import { Close } from '@mui/icons-material';
+
+const slidedown = keyframes`
+  0% {
+         transform: translateY(-100%);
+  }
+  100% {
+        transform: translateY(0);
+  }
+`;
 
 export const Container = styled.header`
         background-color: #fff;
@@ -11,7 +20,15 @@ export const Container = styled.header`
         height: 60px;
         transition: transform .15s ease;
         scroll-behavior: smooth;
-        border-bottom: 1px solid #e9ecef;     
+        
+        &.is-scroll {
+                position: fixed;
+                top: 0;
+                animation: ${slidedown} .3s ease 1;
+                animation-fill-mode: forwards;
+                box-shadow: 0 5px 10px rgb(0 0 0 / 2%);
+
+        }
 `;
 
 export const Wrapper = styled.div`
@@ -142,11 +159,6 @@ export const MenuItemCenter = styled.li`
         padding: 10px;
         text-transform: uppercase;
         display : inline-block;
-        
-        &:hover{
-                border-bottom: 1px solid #000;
-        }
-
 `;
 
 export const Right =styled.div`
@@ -167,7 +179,7 @@ export const MenuItem =styled.div`
         cursor: pointer;;
         margin-left: 16px;
         align-items: center;
-        color: ${props=>props.active ? "#EEC015" : "inherit"};
+        color: inherit;
 
         ${mobile({
                 marginLeft: "20px",
@@ -178,13 +190,17 @@ export const MenuitemText = styled(MenuItem)`
        text-decoration: none;
        
        &:hover{
-                border-bottom: 1px solid #fff;
+                opacity: 1;
+                border-bottom: 1px solid transparent;
         }
         
         ${mobile({display: "none"})}
 `;
 
 export const MenuitemWishList = styled(MenuItem)`
+        &:hover{
+               background-color: rgba(245, 245, 245, 0.8); 
+        }
         ${mobile({display: "none"})}
 `;
 
@@ -206,6 +222,17 @@ export const Links = styled(Link)`
 export const NavLinks = styled(NavLink)`
         text-decoration: none;
         color: inherit;
+        opacity: .5;
+
+        &.active{
+                opacity: 1;
+                font-weight: bold;    
+                border-bottom: 1px solid #000;  
+        }
+
+        :hover{
+                opacity: 1;
+        }
 `;
 
 

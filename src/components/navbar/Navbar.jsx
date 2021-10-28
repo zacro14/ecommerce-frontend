@@ -1,4 +1,4 @@
-import {  useState } from 'react';
+import {  useState,useEffect, useRef } from 'react';
 import { Badge , Tooltip }  from '@mui/material';
 import { useSelector } from "react-redux"
 import { Menu, ShoppingBagOutlined, FavoriteBorder } from '@mui/icons-material';
@@ -13,20 +13,30 @@ import {
         MenuItemContainer, MenuItems,
 } from "./styled/styled_navbar";
 
-const Navbar = ({active}) => {
+const Navbar = () => {
+        const navbar = useRef(null);
+        const [isOpen, setMobileMenu ]=  useState(false);
+        const quantity = useSelector(state => state.cart.cartquantity)
 
- const [isOpen, setMobileMenu ]=  useState(false);
- const quantity = useSelector(state => state.cart.quantity)
+        const scrollHandler = () => {
+                if (navbar.current && window.screen.width > 480) {
+                        if (window.pageYOffset >= 70) {
+                        navbar.current.classList.add('is-scroll');
+                        } else {
+                        navbar.current.classList.remove('is-scroll');
+                        }
+                }
+        };
+
+        useEffect(() => {
+                window.addEventListener('scroll', scrollHandler);
+                return () => window.removeEventListener('scroll', scrollHandler);
+        }, []);
     return (
-<>
-        <Container>
+        <>
+        <Container ref={navbar}>
             <Wrapper>
                  <Left>
-                     {/* <Language>ENG</Language>
-                     <SearchContainer>
-                             <Input placeholder="Search Products"/>
-                             <SearchOutlinedIcon style={{ fontSize:16, color: 'gray' }}/>
-                     </SearchContainer> */}
                 <Links to="/">
                         <Logo>
                                 mens|<Span>Corner</Span>   
@@ -35,17 +45,17 @@ const Navbar = ({active}) => {
                 </Left>
                 <Center>              
                         <MenuItemCenter>
-                                <NavLinks to="/">                       
+                                <NavLinks activeClassName = "active" exact to ="/">                       
                                         home    
                                 </NavLinks>                            
                         </MenuItemCenter>                      
                         <MenuItemCenter> 
-                                <NavLinks to={"/products/luxury"}>                      
+                                <NavLinks activeClassName = "active" to ={"/products/luxury"}>                      
                                         luxury  
                                 </NavLinks>                  
                         </MenuItemCenter> 
                         <MenuItemCenter> 
-                                <NavLinks to={"/products/sport"}>                              
+                                <NavLinks activeClassName = "active" to ={"/products/sport"}>                              
                                         sport   
                                 </NavLinks>                   
                         </MenuItemCenter>            
@@ -79,7 +89,7 @@ const Navbar = ({active}) => {
                                     </Badge>
                             </Tooltip>      
                          </MenuitemWishList>
-                                <MenuItem active={active}>
+                                <MenuItem>
                                 <Tooltip title={"My Bag"}>
                                         <Badge badgeContent= {quantity} color= "error">
                                         <Links to="/cart">
@@ -150,7 +160,7 @@ const Navbar = ({active}) => {
         onClick={()=> setMobileMenu(false)}
         >        
         </MobileBLurWrapper>   
-</>
+        </>
     )
 }
 
