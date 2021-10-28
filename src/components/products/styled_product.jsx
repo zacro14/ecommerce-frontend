@@ -1,13 +1,15 @@
 import styled from "styled-components/macro"
 import { Link } from "react-router-dom"
+//import { mobile } from "../../responsive";
 
 export const Container = styled.div`
     height: 100%;
+    width: 100%;
     position: relative;
     margin: .3125rem;
     cursor: pointer;
     background-color: #fff;
-    border: 1px solid transparent;
+    border: 1px solid #ccc;
 
    &:hover{
        border: 1px solid #000;
@@ -25,6 +27,7 @@ export const ProductImage= styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
+
 `;
 
 export const ProductDetailsContainer = styled.div`
