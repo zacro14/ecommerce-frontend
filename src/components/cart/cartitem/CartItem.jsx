@@ -1,3 +1,4 @@
+import {formatNumber} from "../../../helpers/utils"
 import { Close, FavoriteBorderOutlined} from "@mui/icons-material"
 import { 
     Action, AddCart, AddToWishlist,
@@ -13,8 +14,9 @@ import {
     } 
 from "../cartitem/cartItem_styled"
 
-const CartItem = () => {
-    
+
+const CartItem = ({products}) => {
+    const { img, name, price , quantity , color, size,  } = products
     return (
         <div>
              <ItemSummaryTitle>
@@ -27,39 +29,41 @@ const CartItem = () => {
             <Info>
                 <ProductContainer>
                     <ProductImage 
-                    src="/images/products/inhale_tshirt.jpg"
+                    src={img}
+                    alt={name}
                     />
                     <ProductDetails>
                         <Description fontweight="600">
-                        nikeCourt legacy canvas                       
+                        {name}                       
                         </Description>
                         <Description>
                             <ColorText>Color: 
                                 <FiltercolorCart 
-                                color="#000" 
+                                color={color} 
                                 style={{margin:"0 5px "}}
                                 />
                             </ColorText>                                            
                         </Description>
                         <Description>
-                            <SizeText>Size: 10 
+                            <SizeText>
+                                Size: {size} 
                             </SizeText>                                           
                         </Description>
                         <Description> 
-                            <PriceMobileText>Price: &#8369; 4,795</PriceMobileText>                                          
+                            <PriceMobileText>Price: {formatNumber(price)}</PriceMobileText>                                          
                         </Description>
                     </ProductDetails>
                 </ProductContainer>
 
-                <UnitPrice>&#8369; 4,795</UnitPrice>
+                <UnitPrice>{formatNumber(price)}</UnitPrice>
                 <Quantity>
                     <SelectsizeCart defaultValue>
                         <RemoveCart />
-                        <AmountCart  type="text" defaultValue="1"/>
-                        <AddCart />
+                        <AmountCart  value={quantity} readOnly/>
+                        <AddCart  />
                     </SelectsizeCart>
                 </Quantity>
-                <TotalPrice>&#8369; 4,795</TotalPrice>
+                <TotalPrice>{formatNumber(quantity * price)}</TotalPrice>
                 <Action>
                     <AddToWishlist >
                         <FavoriteBorderOutlined/>
