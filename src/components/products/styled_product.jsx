@@ -1,6 +1,6 @@
 import styled from "styled-components/macro"
 import { Link } from "react-router-dom"
-//import { mobile } from "../../responsive";
+import { mobile } from "../../responsive";
 
 export const Container = styled.div`
     height: 100%;
@@ -21,6 +21,10 @@ export const ProductItem= styled.div`
     position: relative;
     height: 18.75rem;
     background-color: #F6F6F6;
+
+    ${mobile({
+        height: "200px"
+    })}
 `;
 
 export const ProductImage= styled.img`
