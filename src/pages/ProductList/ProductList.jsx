@@ -8,51 +8,28 @@ import { ProductItem } from "../../data";
 import useDocumentTitle from "../../hooks/useDocumentTitle"
 import { StyledLink } from "../../components/products/styled_product";
 import { useParams } from "react-router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 
 
 const ProductList = () => {
   
-    const { category } = useParams();
-    const cat = ProductItem.filter((cat) => cat.cat ===  category )
-    useEffect(() => {
-    }, [category, cat]);
+    const { category } = useParams()
+    const [product, setProduct] = useState([])
+    
 
-    useDocumentTitle(`${ category }- MENS|Corner`);
+    useEffect(() => {
+        const data = ProductItem.filter((cat) => cat.cat ===  category )
+        setProduct(data)
+    }, [category]);
+
+    useDocumentTitle(`${category }- MENS|Corner`);
     return (
         <Container>
                 <Navbar/>               
                 <Title>{category}</Title>
-               {/* <FilterContainer>
-                   <Filter>
-                       <FilterText> Filter Products: </FilterText>
-                       <Select defaultValue="">
-                           <Option >White</Option>
-                           <Option >Black</Option>
-                           <Option >Red</Option>
-                           <Option >Blue</Option>
-                           <Option >Yellow</Option>
-                           <Option >Green</Option>
-                       </Select>
-                       <Select defaultValue="">
-                           <Option >XS</Option>
-                           <Option >S</Option>
-                           <Option >M</Option>
-                           <Option >L</Option>
-                           <Option >XL</Option>                           
-                       </Select>
-                       </Filter>
-                   <Filter>
-                       <FilterText>Sort By: </FilterText>
-                        <Select defaultValue="">
-                           <Option >Price Low to High</Option>
-                           <Option >Price High to Low</Option>                        
-                       </Select>
-                   </Filter>
-               </FilterContainer> */}
                <ProductContainer>
-                {cat.map((product)=>(
+                {product.map((product)=>(
                     <StyledLink key={product.id} to ={`/product/${category}/${product.id}`}>
                         <Products item={product} key={product.id}  />
                     </StyledLink>                                  
