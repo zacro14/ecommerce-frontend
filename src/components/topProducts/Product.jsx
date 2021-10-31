@@ -1,7 +1,6 @@
 import { ShoppingBagOutlined, SearchOutlined, FavoriteBorderOutlined} from "@mui/icons-material";
-import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
-
+import {Link} from "react-router-dom"
 
 const Info = styled.div`
     opacity:0;
@@ -55,26 +54,29 @@ const Icon = styled.div`
     }
     
 `;
-
+const Links = styled(Link)`
+    text-decoration: none;
+    color: inherit;
+`;
 
 const Product = ({item}) => {
     return (
-    <Link to ="/product"> 
        <Container>  
             <Image src={item.img}/>
             <Info>
                 <Icon>
-                    <ShoppingBagOutlined/>
+                        <ShoppingBagOutlined/>
                 </Icon>
                 <Icon>
-                    <SearchOutlined/>
+                    <Links to ={`product/${item.cat}/${item.id}`}>
+                        <SearchOutlined/>
+                    </Links>
                 </Icon>
                 <Icon>
                     <FavoriteBorderOutlined/>
                 </Icon>
             </Info>
        </Container>
-    </Link> 
     )
 }
 

@@ -2,8 +2,9 @@ import { Suspense, lazy} from "react";
 import styled from "styled-components/macro";
 import {mobile} from "../../responsive"
 import { Border, BorderContainer } from "../Categories";
-import { popularProducts } from "../../data";
+import { ProductItem } from "../../data";
 import { CircularProgress } from "@mui/material";
+import { useState, useEffect} from "react";
 const Product = lazy(()=> import("./Product"));
 
 const Container  = styled.div`
@@ -30,6 +31,11 @@ const TopProductsTitle = styled.h3`
 `;
 
 const Products = () => {
+    const [product, setTopProduct] = useState([])
+    useEffect(() => {
+        const data = ProductItem.filter((item) => item.topProduct === true)
+        setTopProduct(data)
+    }, [])
     return (
     <>
         <Suspense fallback={<CircularProgress/>}>
@@ -41,10 +47,12 @@ const Products = () => {
                     </TopProductsTitle>
                 <Border/>
             </BorderContainer>   
-            <Wrapper>            
-                        {popularProducts.map ((item)=>(                   
-                            <Product item={item} key={item.id}/>           
-                    ))}  
+            <Wrapper>       
+                        {
+                            product.map((item)=> ( 
+                                    <Product item={item} key ={ item.id }/>   
+                            ))    
+                        }             
             </Wrapper>         
         </Container>
        </Suspense>
