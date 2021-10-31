@@ -1,31 +1,28 @@
 import {formatNumber} from "../../../helpers/utils"
-import { Close, FavoriteBorderOutlined} from "@mui/icons-material"
+import { Close } from "@mui/icons-material"
+import { Link } from "react-router-dom"
+import { useDispatch } from "react-redux"
+import { addQuantity, removeProduct, subQuantity } from "../../../redux/cartRedux"
 import { 
-    Action, AddCart, AddToWishlist,
-    AmountCart,
-    ColorText,  Description, 
-    FiltercolorCart, 
-    Info, ItemSummaryTitle,
-    PriceMobileText, ProductContainer, 
-    ProductDesc, ProductDetails, ProductImage, 
-    ProductTitle, Quantity, RemoveCart, RemoveItem, 
-    SelectsizeCart, 
+    Action, AddCart,AmountCart, ColorText,  Description, 
+    FiltercolorCart, Info,PriceMobileText, 
+    ProductContainer,  ProductDetails, 
+    ProductImage,Quantity, RemoveCart, 
+    RemoveItem, SelectsizeCart, 
     SizeText,  TotalPrice, UnitPrice 
-    } 
-from "../cartitem/cartItem_styled"
+    } from "../cartitem/cartItem_styled"
+
 
 
 const CartItem = ({products}) => {
-    const { img, name, price , quantity , color, size,  } = products
+    const { img, name, price , quantity , color, size, id, cat } = products
+    const  dispatch = useDispatch()
+
+    const removeItem = () =>dispatch(removeProduct(id))
+    const handleAddQuantity = () =>{dispatch(addQuantity(id))}
+    const handleSubQuantity = () => {quantity > 1 && dispatch(subQuantity(id))}
     return (
-        <div>
-             <ItemSummaryTitle>
-                <ProductTitle>Product</ProductTitle>
-                <ProductDesc>unit price</ProductDesc>
-                <ProductDesc>quantity</ProductDesc>
-                <ProductDesc>total price</ProductDesc>
-                <ProductDesc>Action</ProductDesc>
-            </ItemSummaryTitle>
+        <>
             <Info>
                 <ProductContainer>
                     <ProductImage 
@@ -34,19 +31,21 @@ const CartItem = ({products}) => {
                     />
                     <ProductDetails>
                         <Description fontweight="600">
-                        {name}                       
+                            <Link to = {`/product/${cat}/${id}`} style={{textDecoration: "none", color: "inherit"}}> 
+                                {name}
+                            </Link>                       
                         </Description>
                         <Description>
                             <ColorText>Color: 
                                 <FiltercolorCart 
                                 color={color} 
-                                style={{margin:"0 5px "}}
                                 />
                             </ColorText>                                            
                         </Description>
                         <Description>
+                            Size:
                             <SizeText>
-                                Size: {size} 
+                                {size} 
                             </SizeText>                                           
                         </Description>
                         <Description> 
@@ -58,22 +57,19 @@ const CartItem = ({products}) => {
                 <UnitPrice>{formatNumber(price)}</UnitPrice>
                 <Quantity>
                     <SelectsizeCart defaultValue>
-                        <RemoveCart />
+                        <RemoveCart onClick={handleSubQuantity}/>
                         <AmountCart  value={quantity} readOnly/>
-                        <AddCart  />
+                        <AddCart  onClick={handleAddQuantity}/>
                     </SelectsizeCart>
                 </Quantity>
                 <TotalPrice>{formatNumber(quantity * price)}</TotalPrice>
                 <Action>
-                    <AddToWishlist >
-                        <FavoriteBorderOutlined/>
-                    </AddToWishlist>
-                    <RemoveItem>
+                    <RemoveItem onClick={removeItem}>
                         <Close/>
                     </RemoveItem>
                 </Action>
             </Info>
-        </div>
+        </>
     )
 }
 
