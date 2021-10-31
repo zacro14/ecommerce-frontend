@@ -13,7 +13,7 @@ const slidedown = keyframes`
 `;
 
 export const Container = styled.header`
-        background-color: #fff;
+        background-color: transparent;
         color: #000;
         z-index: 999;
         width: 100%;
@@ -22,6 +22,7 @@ export const Container = styled.header`
         scroll-behavior: smooth;
         
         &.is-scroll {
+                background-color: #fff;
                 position: fixed;
                 top: 0;
                 animation: ${slidedown} .3s ease 1;
@@ -194,13 +195,6 @@ export const MenuitemText = styled(MenuItem)`
                 border-bottom: 1px solid transparent;
         }
         
-        ${mobile({display: "none"})}
-`;
-
-export const MenuitemWishList = styled(MenuItem)`
-        &:hover{
-               background-color: rgba(245, 245, 245, 0.8); 
-        }
         ${mobile({display: "none"})}
 `;
 

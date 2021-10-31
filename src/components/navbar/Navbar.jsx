@@ -1,11 +1,11 @@
 import {  useState,useEffect, useRef } from 'react';
 import { Badge , Tooltip }  from '@mui/material';
 import { useSelector } from "react-redux"
-import { Menu, ShoppingBagOutlined, FavoriteBorder } from '@mui/icons-material';
+import { Menu, ShoppingBagOutlined } from '@mui/icons-material';
 import {
         Container, Wrapper,Left,
         Center,Logo, Right,MenuItem, 
-        MenuitemText, MenuItemHamburger, MenuitemWishList, 
+        MenuitemText, MenuItemHamburger, 
         Links, NavLinks, Span, MenuItemCenter, 
         MobileContainer, MobileBLurWrapper, 
         CloseIcon, MobileMenuLogo, MobilemenuItem, 
@@ -16,7 +16,7 @@ import {
 const Navbar = () => {
         const navbar = useRef(null);
         const [isOpen, setMobileMenu ]=  useState(false);
-        const quantity = useSelector(state => state.cart.cartquantity)
+        const quantity = useSelector(state => state.cart.product.length)
 
         const scrollHandler = () => {
                 if (navbar.current && window.screen.width > 480) {
@@ -45,22 +45,29 @@ const Navbar = () => {
                 </Left>
                 <Center>              
                         <MenuItemCenter>
-                                <NavLinks activeClassName = "active" exact to ="/">                       
+                                <NavLinks 
+                                        activeClassName = "active" 
+                                        exact to ="/">                       
                                         home    
                                 </NavLinks>                            
                         </MenuItemCenter>                      
                         <MenuItemCenter> 
-                                <NavLinks activeClassName = "active" to ={"/products/luxury"}>                      
+                                <NavLinks 
+                                        activeClassName = "active" 
+                                        to ={"/products/luxury"}>                      
                                         luxury  
                                 </NavLinks>                  
                         </MenuItemCenter> 
                         <MenuItemCenter> 
-                                <NavLinks activeClassName = "active" to ={"/products/sport"}>                              
+                                <NavLinks 
+                                        activeClassName = "active" 
+                                        to ={"/products/sport"}>                              
                                         sport   
                                 </NavLinks>                   
                         </MenuItemCenter>            
                         <MenuItemCenter>
-                                <NavLinks to ={"/products/office"}>
+                                <NavLinks 
+                                to ={"/products/office"}>
                                         office
                                 </NavLinks>
                         </MenuItemCenter>    
@@ -79,16 +86,6 @@ const Navbar = () => {
                                         Log in
                                 </NavLinks>
                         </MenuitemText>                  
-                         <MenuitemWishList>
-                            <Tooltip title={"Wishlist"}>
-                                    <Badge 
-                                    badgeContent= {0} 
-                                    color= "primary"
-                                    >
-                                        <FavoriteBorder/>
-                                    </Badge>
-                            </Tooltip>      
-                         </MenuitemWishList>
                                 <MenuItem>
                                 <Tooltip title={"My Bag"}>
                                         <Badge badgeContent= {quantity} color= "error">
@@ -120,22 +117,30 @@ const Navbar = () => {
                 <MenuItemContainer>
                      <MenuItems onClick={() => setMobileMenu(false)}>
                         <MobilemenuItem>
-                                <NavLinks activeClassName="active" to= "/">
+                                <NavLinks 
+                                        activeClassName="active" 
+                                        exact to= "/">
                                         Home
                                 </NavLinks>
                         </MobilemenuItem>
                         <MobilemenuItem>
-                                <NavLinks activeClassName="active" to= {"/products/luxury"}>
+                                <NavLinks 
+                                        activeClassName="active" 
+                                        to= {"/products/luxury"}>
                                         luxury
                                 </NavLinks>
                         </MobilemenuItem>
                         <MobilemenuItem>
-                                <NavLinks activeClassName="active" to={"/products/sport"}>
+                                <NavLinks 
+                                        activeClassName="active" 
+                                        to={"/products/sport"}>
                                          sport
                                 </NavLinks>
                         </MobilemenuItem>
                         <MobilemenuItem>
-                                <NavLinks activeClassName="active" to= {"/products/office"}>
+                                <NavLinks 
+                                        activeClassName="active" 
+                                        to= {"/products/office"}>
                                         office
                                 </NavLinks>
                         </MobilemenuItem>
@@ -156,8 +161,8 @@ const Navbar = () => {
                
         </MobileContainer>  
         <MobileBLurWrapper 
-        isOpen ={isOpen} 
-        onClick={()=> setMobileMenu(false)}
+                isOpen ={isOpen} 
+                onClick={()=> setMobileMenu(false)}
         >        
         </MobileBLurWrapper>   
         </>
