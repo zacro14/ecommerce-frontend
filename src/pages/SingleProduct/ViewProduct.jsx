@@ -1,35 +1,32 @@
 import { useParams } from "react-router"
 import { ProductItem } from "../../data"
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
 import useDocumentTitle from "../../hooks/useDocumentTitle"
 import { formatNumber } from "../../helpers/utils"
+import useCart from "../../hooks/useCart"
 import Navbar from "../../components/navbar/Navbar"
 import Footer from "../../components/footer/Footer"
 import { 
     AddContainer, AddItem, AddtoCart, 
     Amount, AmountContainer,
-    BuyNow, Container, Desc, Divider, 
+    BuyNow, BuyNowLink, Container, Desc, Divider, 
     FilterColor, FilterColorContainer, 
     FilterContainer, FilterSize, FilterSizeOption,
     FilterTitle, Image, ImageContainer, InfoContainer, 
     Price, RemoveItem, SelectContainer, 
     SelectSize, Title, Wrapper 
 } from "./styled_viewproduct"
-import useCart from "../../hooks/useCart"
-
-
-
 
 
 const Product = () => {
 
 const  { id } = useParams()
+const {addItem, isItemOnBasket} = useCart(id)
 const [productitem, setProduct] = useState({})
 const [quantity, setQuantity] = useState(1)
 const [color, setColor] = useState("");
 const [size, setSelectedSize] = useState("");
-const { addToCart, isItemOnCart } = useCart(id);
+
 
 useEffect(()=>{
     try {
@@ -48,7 +45,7 @@ const handleQuantity = (type) => {
 }}
 
 const handleAddtoCart =()=> {
-    addToCart({ ...productitem, quantity, color: color || productitem.color[0], size: size || productitem.size[0]})
+    addItem({ ...productitem, quantity, color: color || productitem.color[0], size: size || productitem.size[0]})
 }
 
 const setSize = (s) => {
@@ -108,9 +105,18 @@ const handleColor = (c) =>{
                             <AmountContainer>
                                 <FilterTitle>Quantity</FilterTitle>  
                                 <SelectSize>                                                                
-                                    <RemoveItem onClick= {() => handleQuantity("decItem")} />
-                                    <Amount type="text"  maxLength= "1000" value = {quantity} readOnly/>
-                                    <AddItem onClick= {() => handleQuantity("addItem")}/>
+                                    <RemoveItem 
+                                        onClick= {() => handleQuantity("decItem")} 
+                                    />
+                                    <Amount 
+                                        type="text"  
+                                        maxLength= "1000" 
+                                        value = {quantity} 
+                                        readOnly
+                                    />
+                                    <AddItem 
+                                        onClick= {() => handleQuantity("addItem")}
+                                    />
                                 </SelectSize>                                   
                             </AmountContainer>
                         </FilterContainer>
@@ -119,15 +125,15 @@ const handleColor = (c) =>{
                    <AddContainer>
                  
                     <AddtoCart 
-                    onClick = {() => handleAddtoCart()}
+                        onClick = {() => handleAddtoCart()}
                     >
-                         {isItemOnCart(productitem.id) ? 'Remove From Cart' : 'Add To Cart'}
-                    </AddtoCart>      
-                    <BuyNow>
-                     <Link style= {{textDecoration: "none", color: "inherit"}} to = {`/cart`} >
-                         Buy Now
-                     </Link>
-                    </BuyNow>
+                        {isItemOnBasket(productitem.id) ? 'Remove Item' : 'Add To Cart'}
+                    </AddtoCart>
+                    <BuyNowLink to ={'/cart'}> 
+                        <BuyNow onClick ={handleAddtoCart}>
+                            Buy Now
+                        </BuyNow>
+                    </BuyNowLink>
                    </AddContainer>
                </InfoContainer>
            </Wrapper>

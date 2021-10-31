@@ -1,12 +1,14 @@
 import styled from "styled-components/macro"
 import { Remove , Add } from "@mui/icons-material";
 import {  mobile } from "../../responsive"
+import {Link} from "react-router-dom"
 
-export const Container = styled.div``;
+export const Container = styled.div`
+    background-color:  #F5F5F5;
+`;
 
 export const Wrapper = styled.div`
     display: flex;
-    background-color:white;
     height: 100%;
     margin: 50px;
 
@@ -105,19 +107,20 @@ export const FilterTitle = styled.label`
 export const FilterColor = styled.span`
     display: flex;
     background-color: ${props => props.color};
-    border-radius:50%;
+    border-radius:100%;
     margin: 5px;
     width: 36px;
     height: 36px;
     position: relative;
     justify-content: space-between;
+    border: 3px solid transparent;
 
     &:hover{
         cursor: pointer;
-        border: 1px solid #222;
+        border: 3px solid #ccc;
     }
     &.active{
-        border: 2px solid #222;
+        border: 3px solid #ccc;
         ::after{
             content: "✓";
             position: absolute;
@@ -149,11 +152,10 @@ export const FilterSizeOption = styled.button`
     background: transparent;
     padding: 5px;
     font-size: 14px;
-    border-radius: 16px;
     border: 1px solid  #ccc;
     color: #000000;
     cursor: pointer;
-    width: 50px;
+    width: 70px;
     margin: 5px;
     align-items: center;
     justify-content: center;
@@ -163,7 +165,7 @@ export const FilterSizeOption = styled.button`
         border: 1px solid #222;
     }
     &.active{
-        border: 2px solid #222;
+        border: 1px solid #222;
     }
 `;
 
@@ -184,7 +186,7 @@ export const Amount = styled.input`
     width: 40px;
     border: 1px solid #ccc;
     border-radius: 3px;
-    margin: 0 10px;
+    margin: 0 3px;
 
     &:focus{
         outline: none;
@@ -232,19 +234,28 @@ export const AddtoCart = styled.button`
         margin: "0 0 10px 0",
     })}
 `;
+
+export const BuyNowLink = styled(Link)`
+    text-decoration: none;
+    color: inherit;
+`;
 export const BuyNow = styled.button`
     background:black;
     color:white;
     border:none;
     border-radius:2px;
     font-size:16px;
-    min-width: 11.25rem;
+    width: 11.25rem;
     height:48px;
     cursor: pointer;
 
     &:hover{
         opacity:80%;
     }
+
+    ${mobile({
+        width: "100%",
+    })}
 `;
 
 
