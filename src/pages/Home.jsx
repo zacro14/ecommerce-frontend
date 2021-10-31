@@ -13,6 +13,7 @@ const renderLoader = () => <CircularProgress/>
 
 const Main = styled.main`
     scroll-behavior: smooth;
+    background-color: #F5F5F5;
 `;
 
 export const Home = () => {
