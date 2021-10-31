@@ -82,6 +82,7 @@ export const ProductItem = [
     cat: "luxury",
     color: ["#ccc", "#000", "red"],
     size: [7,8,9, 10, 11 ],
+    topProduct: false,
   },
   {
     id: '2',
@@ -92,6 +93,7 @@ export const ProductItem = [
     cat: "luxury",
     color: ["#ccc", "#000", "red"],
     size: [7,8,9, 10, 11 ],
+    topProduct: false,
   },
   {
     id: '3',
@@ -100,8 +102,9 @@ export const ProductItem = [
     desc: "This product is made with Primegreen, a series of high-performance recycled materials.",
     img: "/images/products/sport/adidas_white.png",
     cat: "sport",
-    color: ["#ccc", "#000", "red"],
+    color: ["brown", "#000", "red"],
     size: [7,8,9, 10, 11 ],
+    topProduct: false,
   },
   {
     id: '4',
@@ -112,6 +115,7 @@ export const ProductItem = [
     cat: "sport",
     color: ["#ccc", "#000", "red"],
     size: ["s","m","l", "xl" ],
+    topProduct: true,
   },
   {
     id: '5',
@@ -132,26 +136,29 @@ export const ProductItem = [
     cat: "office",
     color: ["#ccc", "#000", "red"],
     size: [7,8,9, 10, 11 ],
+    topProduct: true,
   },
   {
     id: '7',
     name: "nike rubber shoes",
     price: 5499,
     desc: "From strength circuits at the gym to laps on the stadium stairs, these adidas all-purpose shorts are your go-to for training days. Moisture-absorbing AEROREADY keeps you dry. Lightweight ripstop fabric gives you freedom of movement. Stash your keys and ID in the front zip pockets and get to work",
-    img: "/images/products/sport/nike rubbershoes.jpg",
+    img: "/images/products/sport/nike_rubbershoes.png",
     cat: "sport",
     color: ["#ccc", "#000", "red"],
     size: [7,8,9, 10, 11 ],
+    topProduct: true,
   },
   {
     id: '8',
-    name: "nike rubber shoes",
-    price: 5499,
-    desc: "From strength circuits at the gym to laps on the stadium stairs, these adidas all-purpose shorts are your go-to for training days. Moisture-absorbing AEROREADY keeps you dry. Lightweight ripstop fabric gives you freedom of movement. Stash your keys and ID in the front zip pockets and get to work",
-    img: "/images/products/sport/nike rubbershoes.jpg",
-    cat: "sport",
+    name: "air presto mens shoes green",
+    price: 1899,
+    desc: "With a sleek design that's more comfortable than your favorite t-shirt, the Nike Air Presto is made to feel good and look fast. Its stretchy sleeve creates a cozy, sock-like fit while the super-soft foam adds spring to your step. Put them on and you'll never want to take them off.",
+    img: "/images/products/luxury/air-presto-mens-shoes-green.jpg",
+    cat: "luxury",
     color: ["#ccc", "#000", "red"],
     size: [7,8,9, 10, 11 ],
+    topProduct: true,
   }
 
 ]
