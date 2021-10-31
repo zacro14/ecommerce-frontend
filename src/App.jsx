@@ -5,7 +5,7 @@ import Register from "./pages/Register/Register";
 import Product from "./pages/SingleProduct/ViewProduct";
 import ProductList from "./pages/ProductList/ProductList";
 import NotFound  from "./pages/404notfound/NotFound";
-import { BrowserRouter as Router,Switch,Route,} from "react-router-dom"
+import { BrowserRouter as Router,Switch,Route} from "react-router-dom"
 import { ScrollToTop } from "./hooks/useScrollTop";
 
 
@@ -32,7 +32,8 @@ const App = () =>{
         </Route>
        <Route path="/cart" component= {Cart} />
        <Route path="/products/:category" component= {ProductList}/>
-       <Route exact path="/product/:category/:id" component= {Product}/>
+       <Route path="/product/:category/:id" component= {Product}/>
+       
        <Route path= "*" component={NotFound} />
        
       </Switch>
