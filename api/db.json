@@ -1,0 +1,125 @@
+{"user":[
+    {"id":1,"productname":"Gorgeous Soft Table","price":"128.00","description":"The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality","image":"http://placeimg.com/640/480/fashion","color":"olive"},
+    {"id":2,"productname":"Licensed Fresh Ball","price":"793.00","description":"The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J","image":"http://placeimg.com/640/480/fashion","color":"sky blue"},
+    {"id":3,"productname":"Practical Wooden Mouse","price":"36.00","description":"New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016","image":"http://placeimg.com/640/480/fashion","color":"black"},
+    {"id":4,"productname":"Tasty Steel Salad","price":"110.00","description":"Carbonite web goalkeeper gloves are ergonomically designed to give easy fit","image":"http://placeimg.com/640/480/fashion","color":"olive"},
+    {"id":5,"productname":"Generic Soft Sausages","price":"225.00","description":"The Football Is Good For Training And Recreational Purposes","image":"http://placeimg.com/640/480/fashion","color":"lime"},
+    {"id":6,"productname":"Handcrafted Frozen Chair","price":"146.00","description":"The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive","image":"http://placeimg.com/640/480/fashion","color":"violet"},
+    {"id":7,"productname":"Generic Plastic Ball","price":"158.00","description":"The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design","image":"http://placeimg.com/640/480/fashion","color":"salmon"},
+    {"id":8,"productname":"Awesome Frozen Towels","price":"787.00","description":"Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles","image":"http://placeimg.com/640/480/fashion","color":"olive"},
+    {"id":9,"productname":"Tasty Rubber Bacon","price":"738.00","description":"The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design","image":"http://placeimg.com/640/480/fashion","color":"azure"},
+    {"id":10,"productname":"Awesome Fresh Car","price":"2.00","description":"The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J","image":"http://placeimg.com/640/480/fashion","color":"yellow"}
+],
+"products": [
+        {
+            "id": "1",
+            "name": "air force jordan",
+            "price": 4999,
+            "desc": "The radiance lives on in the Nike Air Force 1 '07, the b-ball OG that puts a fresh spin on what you know best: crisp leather, clean colourways and the perfect amount of flash to make you shine. This clean, pure white finish adds the gum-sole contrast for a fresh, versatile look with just the right amount of pop.",
+            "img": "/images/products/luxury/airforce_addidas.jpg",
+            "cat": "luxury",
+            "color": ["#ccc", "#000", "red"],
+            "size": [7,8,9, 10, 11 ],
+            "topProduct": false
+          },
+          {
+            "id": "2",
+            "name": "Jordan One Take II",
+            "price": 3499,
+            "desc": "Russell Westbrook backs up his brashness with a fast, aggressive playing style and numbers that place him among the league's best. His all-new Jordan One Take II embodies his edginess and speed. Colors, textures and design lines speak to Russ' persona both on and off the court.",
+            "img": "/images/products/luxury/russel west brook-red.jpg",
+            "cat": "luxury",
+            "color": ["#ccc", "#000", "red"],
+            "size": [7,8,9, 10, 11 ],
+            "topProduct": false
+          },
+          {
+            "id": "3",
+            "name": "adidas air jordan",
+            "price": 3999,
+            "desc": "This product is made with Primegreen, a series of high-performance recycled materials.",
+            "img": "/images/products/sport/adidas_white.png",
+            "cat": "sport",
+            "color": ["brown", "#000", "red"],
+            "size": [7,8,9, 10, 11 ],
+            "topProduct": false
+          },
+          {
+            "id": "4",
+            "name": "adidas Z.N.E. jacket X james bond",
+            "price": 2999,
+            "desc": "From strength circuits at the gym to laps on the stadium stairs, these adidas all-purpose shorts are your go-to for training days. Moisture-absorbing AEROREADY keeps you dry. Lightweight ripstop fabric gives you freedom of movement. Stash your keys and ID in the front zip pockets and get to work",
+            "img": "/images/products/sport/adidas-z.n.e.-jacket-x-james-bond.jpg",
+            "cat": "sport",
+            "color": ["#ccc", "#000", "red"],
+            "size": ["s","m","l", "xl" ],
+            "topProduct": true
+          },
+          {
+            "id": "5",
+            "name": "adidas jacket black",
+            "price": 1999,
+            "desc": "From strength circuits at the gym to laps on the stadium stairs, these adidas all-purpose shorts are your go-to for training days. Moisture-absorbing AEROREADY keeps you dry. Lightweight ripstop fabric gives you freedom of movement. Stash your keys and ID in the front zip pockets and get to work",
+            "img": "/images/products/sport/adicolorjacket.jpg",
+            "cat": "sport",
+            "color": ["#ccc", "#000", "red"],
+            "size": ["s","m","l", "xl"]
+          },
+          {
+            "id": "6",
+            "name": "royal suite blue",
+            "price": 1499,
+            "desc": "From strength circuits at the gym to laps on the stadium stairs, these adidas all-purpose shorts are your go-to for training days. Moisture-absorbing AEROREADY keeps you dry. Lightweight ripstop fabric gives you freedom of movement. Stash your keys and ID in the front zip pockets and get to work",
+            "img": "/images/products/office/royalsuite_blue.png",
+            "cat": "office",
+            "color": ["#ccc", "#000", "red"],
+            "size": [7,8,9, 10, 11 ],
+            "topProduct": true
+          },
+          {
+            "id": "7",
+            "name": "nike rubber shoes",
+            "price": 5499,
+            "desc": "From strength circuits at the gym to laps on the stadium stairs, these adidas all-purpose shorts are your go-to for training days. Moisture-absorbing AEROREADY keeps you dry. Lightweight ripstop fabric gives you freedom of movement. Stash your keys and ID in the front zip pockets and get to work",
+            "img": "/images/products/sport/nike_rubbershoes.png",
+            "cat": "sport",
+            "color": ["#ccc", "#000", "red"],
+            "size": [7,8,9, 10, 11 ],
+            "topProduct": true
+          },
+          {
+            "id": "8",
+            "name": "air presto mens shoes green",
+            "price": 1899,
+            "desc": "With a sleek design that's more comfortable than your favorite t-shirt, the Nike Air Presto is made to feel good and look fast. Its stretchy sleeve creates a cozy, sock-like fit while the super-soft foam adds spring to your step. Put them on and you'll never want to take them off.",
+            "img": "/images/products/luxury/air-presto-mens-shoes-green.jpg",
+            "cat":  "luxury",
+            "color": ["#ccc", "#000", "red"],
+            "size": [7,8,9, 10, 11 ],
+            "topProduct": true
+            
+        } 
+    ],
+"categories": [
+    {
+        "id": 1,
+        "img": "/images/category/men_luxury.jpg",
+        "category": "luxury"
+    },
+    {
+        "id": 2,
+        "img": "/images/category/men_sport.jpg",
+        "category": "sport"
+    },
+    {
+        "id": 3,
+        "img": "/images/category/men_office.jpg",
+        "category": "office"
+    }
+],
+"cart": [
+    {
+        "id": 1
+    }
+]
+}

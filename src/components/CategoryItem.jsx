@@ -1,62 +1,60 @@
 import styled from "styled-components/macro"
 import {mobile} from "../responsive"
 
-const Container = styled.div`
+const Container = styled.figure`
+    position: relative;
     flex:1;
-    margin: 3px;
-    min-height: 300px;
-    position:relative;
+    height: 100%;
     cursor: pointer;
+    overflow: hidden;
 
-
-    &:hover{
-       
-        color: #EEC015;  
+    :hover{ 
+        transform: scale(1.03);
+        transition: all .8s ease;
     }
 `;
 
-const Image = styled.img`
+ const Image = styled.img`
    width: 100%;
-   height:100%;
-   object-fit:cover;
-   opacity: .8;
+   height: 100% ;
+   object-fit: cover;
+   background-color: #000;
+   opacity: 1;
+   overflow: hidden;
 
-   ${mobile({height: "100%"})}
 `;
-const Info = styled.div`
-    position: absolute;
+
+const Info = styled.figcaption`
     height:100%;
     width:100%;
-    top:0;
-    left:0;
-    bottom:0;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    margin-left: 20px;
 
     ${mobile({margin: 0})}
 `;
 
-const Title = styled.h1`
+const Category = styled.h1`
+    position: absolute;
+    top: 50%;
+    font-size: 30px;
     color: #fff;
-    text-transform:uppercase;
-    text-align: center;
-    padding: .625rem;
-    background-color: #000;
-    border: 1px solid #000;
-    z-index: 1;
+    text-transform: uppercase;
+    padding: 0 .625rem;
+    letter-spacing: .125rem;
+    font-weight: 500;
+    text-shadow: 0 0 50px #000;
 `;
 
 const CategoriesItem = ({item}) => {
     return (
         <Container>      
                 <Image src={item.img} alt={item.title}/>
-                <Info>
-                        <Title>
-                            {item.title}
-                        </Title>
+                <Info> 
+                    <Category>
+                        {item.category}
+                    </Category>
                 </Info>     
         </Container>
     )

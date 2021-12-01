@@ -1,14 +1,12 @@
-import Navbar from "../../components/navbar/Navbar"
-//import Announcement from "../../components/Announcement";
-import { Container,ProductContainer, Title } from "./styled.productlist";
-//import Newsletter from "../../components/newsletter/Newsletter";
-import Footer from "../../components/footer/Footer";
-import Products from "../../components/products/Products";
-import { ProductItem } from "../../data";
-import useDocumentTitle from "../../hooks/useDocumentTitle"
-import { StyledLink } from "../../components/products/styled_product";
-import { useParams } from "react-router";
+import {  useParams } from "react-router";
 import { useEffect, useState } from "react";
+import Navbar from "../../components/navbar/Navbar"
+import { Container,ProductContainer, Title } from "./styled_productlist";
+import Footer from "../../components/footer/Footer";
+import Products from "../../components/products/ProductItem";
+import useDocumentTitle from "../../hooks/useDocumentTitle"
+import { publicReq } from "../../BASE_URL";
+import { StyledLink } from "../../components/products/productitem_styled";
 
 
 
@@ -16,28 +14,46 @@ const ProductList = () => {
   
     const { category } = useParams()
     const [product, setProduct] = useState([])
-    
+    const [isLoading, setLoading] = useState(false)
 
     useEffect(() => {
-        const data = ProductItem.filter((cat) => cat.cat ===  category )
-        setProduct(data)
+        const getcategory = async () => {    
+        try {
+            setLoading(true)
+            const res = await publicReq.get( category ? `/products?cat=${category}` : `/products`)
+            setProduct(res.data)
+            setLoading(false)
+        } catch (error) {
+            console.log(error)
+        }}
+        getcategory()
     }, [category]);
-
-    useDocumentTitle(`${category }- MENS|Corner`);
+    useDocumentTitle(`Shop- MENS|Corner`);
     return (
-        <Container>
-                <Navbar/>               
-                <Title>{category}</Title>
+        <>
+        <Navbar/>  
+        <Container>             
+            <Title>{"Shop"}</Title>
                <ProductContainer>
-                {product.map((product)=>(
-                    <StyledLink key={product.id} to ={`/product/${category}/${product.id}`}>
-                        <Products item={product} key={product.id}  />
-                    </StyledLink>                                  
-                ))}  
-                </ProductContainer>
-               <Footer/>
+                {
+                product.length === 0 ? new Array(12).fill({}).map((product, index) => (
+                    <Products
+                      key={`skeleton${index}`}
+                      item={product}
+                      isLoading={isLoading}
+                    />
+                  )) :
+
+                 product.map((product)=>(
+                   <StyledLink key={product.id} to ={`/product/${product.cat}/${product.id}`}>
+                         <Products item={product} key={product.id}  isLoading={isLoading}  /> 
+                     </StyledLink>                       
+                 ))}
+  
+                </ProductContainer>  
         </Container>
-       
+        <Footer/>
+       </>
     )
 }
 

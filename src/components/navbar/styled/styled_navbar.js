@@ -13,23 +13,24 @@ const slidedown = keyframes`
 `;
 
 export const Container = styled.header`
-        background-color: transparent;
+        background-color: #fff;
         color: #000;
         z-index: 999;
         width: 100%;
-        height: 60px;
+        height: 80px;
         transition: transform .15s ease;
-        scroll-behavior: smooth;
+        align-items: center;
         
         &.is-scroll {
+                height: 60px;
                 background-color: #fff;
                 position: fixed;
                 top: 0;
                 animation: ${slidedown} .3s ease 1;
                 animation-fill-mode: forwards;
-                box-shadow: 0 5px 10px rgb(0 0 0 / 2%);
-
+                box-shadow: 0 5px 10px rgb(0 0 0 / 8%);
         }
+        
 `;
 
 export const Wrapper = styled.div`

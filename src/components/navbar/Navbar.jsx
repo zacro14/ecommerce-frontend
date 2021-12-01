@@ -16,10 +16,21 @@ import {
 const Navbar = () => {
         const navbar = useRef(null);
         const [isOpen, setMobileMenu ]=  useState(false);
-        const quantity = useSelector(state => state.cart.product.length)
+        const cart = useSelector(state => state.cart.product)
+        const [Quantity, setItemQuantity] = useState(null)
 
+        useEffect(() => {
+              let  data = cart.map((item) => item.quantity)
+              if(data.length === 0) {
+                        setItemQuantity(0)
+              } else {
+                        let quantity = data.reduce((itemquantity, a) => itemquantity + a , 0 ); 
+                        setItemQuantity(quantity)
+              }
+                
+        }, [cart])
         const scrollHandler = () => {
-                if (navbar.current && window.screen.width > 480) {
+                if (navbar.current && window.screen.width > 0 ) {
                         if (window.pageYOffset >= 70) {
                         navbar.current.classList.add('is-scroll');
                         } else {
@@ -50,24 +61,31 @@ const Navbar = () => {
                                         exact to ="/">                       
                                         home    
                                 </NavLinks>                            
-                        </MenuItemCenter>                      
+                        </MenuItemCenter>
+                        <MenuItemCenter>
+                                <NavLinks 
+                                        activeClassName = "active"
+                                        exact to ={"/shop/"} >                       
+                                        shop    
+                                </NavLinks>                            
+                        </MenuItemCenter>                       
                         <MenuItemCenter> 
                                 <NavLinks 
                                         activeClassName = "active" 
-                                        to ={"/products/luxury"}>                      
+                                        to ={"/shop/products/luxury/"}>                      
                                         luxury  
                                 </NavLinks>                  
                         </MenuItemCenter> 
                         <MenuItemCenter> 
                                 <NavLinks 
                                         activeClassName = "active" 
-                                        to ={"/products/sport"}>                              
+                                        to ={"/shop/products/sport/"}>                              
                                         sport   
                                 </NavLinks>                   
                         </MenuItemCenter>            
                         <MenuItemCenter>
                                 <NavLinks 
-                                to ={"/products/office"}>
+                                to ={"/shop/products/office/"}>
                                         office
                                 </NavLinks>
                         </MenuItemCenter>    
@@ -87,13 +105,15 @@ const Navbar = () => {
                                 </NavLinks>
                         </MenuitemText>                  
                                 <MenuItem>
+                                        
                                 <Tooltip title={"My Bag"}>
-                                        <Badge badgeContent= {quantity} color= "error">
+                                        <Badge badgeContent= { Quantity } color= "error">
                                         <Links to="/cart">
                                                 <ShoppingBagOutlined/>
                                         </Links>
-                                        </Badge>
+                                        </Badge>      
                                 </Tooltip>      
+                                
                                 </MenuItem>
                          <MenuItemHamburger 
                          onClick={()=>setMobileMenu(true)}
@@ -126,21 +146,29 @@ const Navbar = () => {
                         <MobilemenuItem>
                                 <NavLinks 
                                         activeClassName="active" 
-                                        to= {"/products/luxury"}>
+                                        exact  
+                                        to= {"/shop/products/"}>
+                                        shop
+                                </NavLinks>
+                        </MobilemenuItem>
+                        <MobilemenuItem>
+                                <NavLinks 
+                                        activeClassName="active" 
+                                        to= {"/shop/products/luxury"}>
                                         luxury
                                 </NavLinks>
                         </MobilemenuItem>
                         <MobilemenuItem>
                                 <NavLinks 
                                         activeClassName="active" 
-                                        to={"/products/sport"}>
+                                        to={"/shop/products/sport"}>
                                          sport
                                 </NavLinks>
                         </MobilemenuItem>
                         <MobilemenuItem>
                                 <NavLinks 
                                         activeClassName="active" 
-                                        to= {"/products/office"}>
+                                        to= {"/shop/products/office"}>
                                         office
                                 </NavLinks>
                         </MobilemenuItem>

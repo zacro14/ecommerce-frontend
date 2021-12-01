@@ -2,17 +2,17 @@ import styled from "styled-components/macro"
 import { Link } from "react-router-dom"
 import { mobile } from "../../responsive";
 
-export const Container = styled.div`
+export const Container = styled.section`
     height: 100%;
     width: 100%;
     position: relative;
     margin: .3125rem;
-    cursor: pointer;
+    cursor:${props=> props.Loading ? "" : "pointer"};
     background-color: #fff;
-    border: 1px solid #ccc;
+    border: ${props => props.Loading ?  "" : "1px solid #ccc" };
 
-   &:hover{
-       border: 1px solid #000;
+   :hover{
+       border: ${props => props.Loading ? "" : "1px solid #000"};
        z-index: 1;
    }
 `;

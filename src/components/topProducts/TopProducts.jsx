@@ -1,19 +1,19 @@
 import { Suspense, lazy} from "react";
 import styled from "styled-components/macro";
-import {mobile} from "../../responsive"
-import { Border, BorderContainer } from "../Categories";
+import { mobile } from "../../responsive"
 import { ProductItem } from "../../data";
 import { CircularProgress } from "@mui/material";
 import { useState, useEffect} from "react";
 const Product = lazy(()=> import("./Product"));
 
-const Container  = styled.div`
+const Container  = styled.section`
+    margin-top: 50px;
+
     ${mobile({marginTop: "20px"})}
-    margin-top: 30px;
-`
+`;
 
 const Wrapper = styled.div`
-    padding: 20px;
+    padding: 0 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -22,15 +22,16 @@ const Wrapper = styled.div`
 `;
 
 const TopProductsTitle = styled.h3`
-    text-align: center;
-    text-transform:uppercase;
+    padding: 0 20px;
+    text-transform: uppercase;
     font-weight: 600;
     font-size: 1.875rem;
+    letter-spacing: 2px;
 
     ${mobile({justifyContent: "center", padding: "0"})}
 `;
 
-const Products = () => {
+const TopProducts = (IsOffer) => {
     const [product, setTopProduct] = useState([])
     useEffect(() => {
         const data = ProductItem.filter((item) => item.topProduct === true)
@@ -39,20 +40,14 @@ const Products = () => {
     return (
     <>
         <Suspense fallback={<CircularProgress/>}>
-        <Container>
-            <BorderContainer>
-                <Border/>
-                    <TopProductsTitle>
-                        top product
-                    </TopProductsTitle>
-                <Border/>
-            </BorderContainer>   
+        <Container>   
+            <TopProductsTitle>
+                top products
+            </TopProductsTitle>     
             <Wrapper>       
-                        {
-                            product.map((item)=> ( 
-                                    <Product item={item} key ={ item.id }/>   
-                            ))    
-                        }             
+                {product.map((item)=> ( 
+                        <Product item={item} key ={ item.id }/>   
+                    ))}             
             </Wrapper>         
         </Container>
        </Suspense>
@@ -60,4 +55,4 @@ const Products = () => {
     )
 }
 
-export default Products
+export default TopProducts

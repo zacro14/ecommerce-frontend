@@ -1,10 +1,14 @@
 import styled from "styled-components/macro"
 import { mobile } from "../../responsive";
-export const Container = styled.div`
+
+export const Container = styled.main`
     background-color: #F5F5F5;
+    ${mobile({
+        position: "relative",
+    })}
 `;
 export const Title = styled.h1`
-    margin:20px;
+    padding: 20px;
     text-transform: capitalize;
 `;
 export const FilterContainer = styled.div`
@@ -14,7 +18,7 @@ export const FilterContainer = styled.div`
     ${mobile({flexDirection: "column"})}
 `;
 export const Filter = styled.div`
-    margin:20px;
+    margin: 20px;
 
     ${mobile({
         margin: "10px",
@@ -24,12 +28,12 @@ export const Filter = styled.div`
     })}
 `;
 export const FilterText =styled.label`
-    font-weight:600;
+    font-weight: 600;
     margin-right: 10px;
 `;
 export const Select = styled.select`
     margin-right: 20px;
-    padding:10px;
+    padding: 10px;
 `;
 
 export const Option = styled.option``;
@@ -45,6 +49,6 @@ export const ProductContainer = styled.div`
 
     ${mobile({
         gridTemplateColumns: "repeat(2,50%)",
-        
+         gridColumnGap: "5px"
     })}
 `;

@@ -2,25 +2,25 @@
 export const sliderItems = [
     {
       id: 1,
-      img: "/images/slider/1.png",
-      title: "SUMMER SALE",
+      img: "/images/slider/1.jpg",
+      title: "luxury collections",
       desc: "DON'T COMPROMISE your STYLE! GET at 30% OFF FOR NEW ARRIVALS.",
-      bg: "f5fafd",
+      category: "luxury"
     },
     {
       id: 2,
       img: "/images/slider/2.jpg",
-      title: "AUTUMN COLLECTION",
+      title: "sport collections",
       desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
-      bg: "fcf1ed",
+      category: "sport"
     },
     {
       id: 3,
-      img: "/images/slider/3.jpg",
-      title: "LOUNGEWEAR LOVE",
-      desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
-      bg: "fbf0f4",
-    },
+      img: "/images/slider/men.jpg",
+      title: "office collections",
+      desc: "explore our  best collections for your business trips",
+      category: "office"
+    }
   ];
 
   export const categories = [
@@ -89,7 +89,7 @@ export const ProductItem = [
     name: "ramp shoes",
     price: 3499,
     desc: "The radiance lives on in the Nike Air Force 1 '07, the b-ball OG that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
-    img: "/images/products/luxury/air-force.png",
+    img: "/images/products/luxury/ramp-shoes.jpg",
     cat: "luxury",
     color: ["#ccc", "#000", "red"],
     size: [7,8,9, 10, 11 ],

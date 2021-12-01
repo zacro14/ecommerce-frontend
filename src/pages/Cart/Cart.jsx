@@ -8,11 +8,8 @@ import ItemSummary from "../../components/cart/productsummary/ItemSummary";
 import { 
     CartContainer, 
     CartTitle, 
-    CartWrapper, 
-    ItemSummaryTitle, 
+    CartWrapper,  
     LeftCartContainer,
-    ProductDesc,
-    ProductTitle,
     RightCartContainer,
 } from "./styled.cart";
 
@@ -28,16 +25,9 @@ const Cart = () => {
  <CartContainer>
     <Navbar />
     <Suspense fallback = { <div style= {{textAlign : "center", minHeight: "50vh"}}>Loading...</div>}>
-    <CartTitle>shopping bag</CartTitle>
+    <CartTitle>my shopping cart ({cart.product.length})</CartTitle>
       <CartWrapper>       
         <LeftCartContainer> 
-            <ItemSummaryTitle>
-                <ProductTitle>Product</ProductTitle>
-                <ProductDesc>unit price</ProductDesc>
-                <ProductDesc>quantity</ProductDesc>
-                <ProductDesc>total price</ProductDesc>
-                <ProductDesc>Action</ProductDesc>
-            </ItemSummaryTitle>
             {
             cart.product.length > 0 ?
             cart.product.map((product)=>(

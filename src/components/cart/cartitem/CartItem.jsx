@@ -1,16 +1,15 @@
 import {formatNumber} from "../../../helpers/utils"
 import { Close } from "@mui/icons-material"
-import { Link } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { addQuantity, removeProduct, subQuantity } from "../../../redux/cartRedux"
 import { 
-    Action, AddCart,AmountCart, ColorText,  Description, 
-    FiltercolorCart, Info,PriceMobileText, 
-    ProductContainer,  ProductDetails, 
-    ProductImage,Quantity, RemoveCart, 
+    Action, AddCart, AmountCart, ColorText,  Description, 
+    FiltercolorCart, ImgContainer, Info,Links,PriceMobileText, 
+    ProductContainer, ProductDetails, 
+    ProductImage, Quantity, RemoveCart, 
     RemoveItem, SelectsizeCart, 
     SizeText,  TotalPrice, UnitPrice 
-    } from "../cartitem/cartItem_styled"
+} from "../cartitem/cartItem_styled"
 
 
 
@@ -25,26 +24,27 @@ const CartItem = ({products}) => {
         <>
             <Info>
                 <ProductContainer>
-                    <ProductImage 
-                    src={img}
-                    alt={name}
-                    />
+                    <ImgContainer>
+                        <ProductImage 
+                        src={img}
+                        alt={name}
+                        />
+                    </ImgContainer>
                     <ProductDetails>
                         <Description fontweight="600">
-                            <Link to = {`/product/${cat}/${id}`} style={{textDecoration: "none", color: "inherit"}}> 
+                            <Links to = {`/product/${cat}/${id}`}> 
                                 {name}
-                            </Link>                       
+                            </Links>                       
                         </Description>
                         <Description>
-                            <ColorText>Color: 
+                            <ColorText>Color 
                                 <FiltercolorCart 
                                 color={color} 
                                 />
                             </ColorText>                                            
                         </Description>
                         <Description>
-                            Size:
-                            <SizeText>
+                            <SizeText>Size
                                 {size} 
                             </SizeText>                                           
                         </Description>

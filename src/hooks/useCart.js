@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { addProduct, removeProduct } from "../redux/cartRedux";
+import { addProduct, addQuantity } from "../redux/cartRedux";
 const useCart = () => {
     const cart = useSelector(state => state.cart.product)
     const dispatch = useDispatch()
@@ -8,7 +8,7 @@ const useCart = () => {
 
     const addItem =(productitem) => {
         if(isItemOnBasket(productitem.id)){
-            dispatch(removeProduct(productitem.id))
+            dispatch(addQuantity(productitem.id))
             
         }else{
             dispatch(addProduct(productitem))

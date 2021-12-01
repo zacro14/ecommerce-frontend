@@ -3,11 +3,13 @@ import { LeftCartContainer } from "../../../pages/Cart/styled.cart";
 
 export const SummaryContainer = styled(LeftCartContainer)`
     display: flex;
+    background-color: #fff;
     flex-direction:column;
     padding: .625rem;
     min-height: 210px;
     justify-content:space-between;
-   
+    box-shadow: 0 0.0625rem rgb(0 0 0 / 5%);
+
 `;
 
 export const AcceptPaymentContainer = styled.div`
@@ -53,11 +55,11 @@ export const PaymentMethodTitle = styled.span`
 `;
 
 export const SummaryTitle = styled.span`
-    font-weight:600;
-    font-size:1rem;
-    text-transform:capitalize;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: capitalize;
     align-items: center;
-    margin-bottom:.875rem;
+    margin-bottom: .875rem;
 `;
 
 
