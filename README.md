@@ -1,7 +1,7 @@
  It still in development  process, so expect for bugs thanks
  
  
-live site: https://menscorner.netlify.app/
+live site: https://menscorner.herokuapp.com/
 
 # Getting Started with Create React App
 
